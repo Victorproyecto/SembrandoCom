@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>FamilyRoots/modalAddMember</title>
+</head>
+<body>
+    <main id="modal-add-member">
+        <form class="modal-add-member" action="../controlador/save_member_info.php" method="post" enctype="multipart/form-data">
+            <div class="profile-info">
+                <div class="image-upload">
+                    <img id="profile-img" src="" alt="foto de perfil">
+                    <label for="file-input" class="upload-label">
+                        <i class="bi bi-image"></i>
+                    </label>
+                    <input id="file-input" type="file" name="profileImage" style="display: none;" onchange="uploadMemberImage()">
+                </div>
+            </div>
+            <div class="sumary-info">
+                <input type="text" name="nom_miembro" class="info-input" placeholder="Nombre">
+                <input type="text" name="ape_miembro" class="info-input" placeholder="Apellidos">
+                <input type="text" name="fecha_naci" class="info-input" placeholder="Fecha de nacimiento" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                <input type="text" name="fecha_falle" class="info-input" placeholder="Fecha de fallecimiento" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                <input type="text" name="lugar_naci" class="info-input" placeholder="Lugar de nacimiento">
+                <input type="text" name="profesion" class="info-input" placeholder="Profesión">
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn add-member" data-relation="padre"><i class="bi bi-plus-lg">&nbsp;</i>Padre</button>
+                <button type="button" class="btn add-member" data-relation="madre"><i class="bi bi-plus-lg">&nbsp;</i>Madre</button>
+                <button type="button" class="btn-icon"><i class="bi bi-image"></i></button>
+                <button type="button" class="btn add-member" data-relation="hijo"><i class="bi bi-plus-lg">&nbsp;</i>Hijo</button>
+                <button type="button" class="btn add-member" data-relation="hija"><i class="bi bi-plus-lg">&nbsp;</i>Hija</button>
+                <button type="button" id="saveMemberButton" class="btn-icon"><i class="bi bi-floppy"></i></button>
+                <button type="button" class="btn add-member" data-relation="pareja"><i class="bi bi-plus-lg">&nbsp;</i>Pareja</button>
+                <button type="button" class="btn add-member" data-relation="expareja"><i class="bi bi-plus-lg">&nbsp;</i>Expareja</button>
+                <button type="button" id="dropMemberButton" class="btn-icon"><i class="bi bi-trash"></i></button>
+            </div>
+            <input type="hidden" name="id_miembro" id="input-id-miembro">
+        </form>
+    </main>
+</body>
+</html>

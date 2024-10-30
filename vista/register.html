@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FamilyRoots/register</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo-nav">
+                <img src="img/fondosLogos/logo.png" alt="logoFamilyRoots">
+            </div>
+        </nav>
+    </header>
+    <main id="register">
+        <div class="left-column">
+
+        </div>
+        <div class="central-column" id="margin-bot">
+            <img id="logoCentral" src="img/fondosLogos/logoCentral.png" alt="logoCentral">
+            <p class="message">Regístrate para empezar a crear tu árbol genealógico.</p>
+        </div>
+        <div class="right-column">
+            <form action="../controlador/register.php" method="post" class="login-form">
+                <label class="label" for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class="input" placeholder="Albert Castro">
+    
+                <label class="label" for="fecha">Fecha de nacimiento</label>
+                <input type="date" name="fecha" id="fecha" class="input">
+
+                <label for="email" class="label">Correo electrónico</label>
+                <input type="email" name="email" id="email" class="input" placeholder="example@email.com">
+    
+                <label for="password" class="label">Contraseña</label>
+                <input type="password" name="password" id="password" class="input" placeholder="mínimo 8 caracteres">
+
+                <label  class="admin label">Register as Admin
+                <input type="checkbox" name="admin" id="admin" class="input">
+                </label>
+
+                <button class="btn-login" type="submit">Regístrate</button>
+            </form>
+            <div class="separator">
+                <hr class="hr-login">
+                <span>o</span>
+                <hr class="hr-login">
+            </div>
+            <a id="btn-google" href=""></a>
+                <p class="login-footer">¿Ya tienes una cuenta?<a class="link-sub" rel="stylesheet" href="login.html"> Inicia Sesión</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 FamilyRoots. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/login.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>

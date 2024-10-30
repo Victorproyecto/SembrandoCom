@@ -1,0 +1,43 @@
+@import 'variables';
+
+#marginbot{
+    margin-bottom: 50%;
+}
+
+#titulo{
+    font-size: 4em;
+    font-weight: 600;
+    margin-bottom: auto;
+    color: $negro;
+}
+
+#subtitulo{
+    font-size: 2em;
+    line-height: 1.5;
+    color: $negro;
+}
+
+#logoCentral{
+    height: auto;
+    width: 75%;
+}
+
+#modal-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index:100;
+    overflow: auto;
+
+    @media (max-width: 800px) {
+        .modal-add-member{
+            @include scaleDown(0.8);
+        }
+    }
+}

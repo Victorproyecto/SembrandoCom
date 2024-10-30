@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>FamilyRoots/login</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo-nav">
+                <img src="img/fondosLogos/logo.png" alt="logoFamilyRoots">
+            </div>
+        </nav>
+    </header>
+    <main id="login">
+        <div class="left-column">
+
+        </div>
+        <div class="central-column" id="margin-bot">
+            <img id="logoCentral" src="img/fondosLogos/logoCentral.png" alt="logoCentral">
+            <p class="message">Bienvenido, tu árbol genealógico te espera.</p>
+        </div>
+        <div class="right-column">
+            <form action="../controlador/login.php" class="login-form" method="post">
+                
+                <label for="email" class="label">Correo electrónico</label>
+                <input type="email" id="email" name="email" class="input" placeholder="example@email.com" required>
+    
+                <label for="password" class="label">Contraseña</label>
+                <input type="password" id="password" name="password" class="input" placeholder="mínimo 8 caracteres" required>
+
+                <button class="btn-login" type="submit">Iniciar sesión</button>
+            </form>
+            <div class="separator">
+                <hr class="hr-login">
+                <span>o</span>
+                <hr class="hr-login">
+            </div>
+            <a id="btn-google" href=""></a>
+            <p class="login-footer">¿No tienes una cuenta?<a class="link-sub" rel="stylesheet" href="register.html"> Regístrate</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 FamilyRoots. Todos los derechos reservados.</p>
+    </footer>
+        <script src="js/login.js"></script>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <script src="js/alerts.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>FamilyRoots/suport</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo-nav">
+                <img src="img/fondosLogos/logo.png" alt="logoFamilyRoots">
+            </div>
+            <div class="navigator">
+                <a class="link-navigator" href="profile.html">Perfil</a>
+                <a class="link-navigator" href="bento.html">Familia</a>
+                <a class="link-navigator" href="album.html">Álbum Fotográfico</a>
+                <a class="current-page" href="suport.html">Soporte</a>
+            </div>
+            <a href="../controlador/logout.php" class="button-nav"><i class="bi bi-box-arrow-right"></i></a>
+        </nav>
+    </header>
+        <main id="suport">
+            <form class="center-suport" action="mailto:suport.family.roots@gmail.com" method="post" enctype="text/plain">
+                <label for="user-text">¿En qué podemos ayudarte?</label>
+                <div class="textarea-content">
+                    <textarea class="textarea" id="supportMessage" name="user-text" maxlength="300" placeholder="Máximo 300 caracteres." required></textarea>
+                    <button class="button" onclick="sendEmail()"><i class="bi bi-send"></i></button>
+                </div>
+            </form>
+            <div class="trending-topics">
+                <p>Temas destacados</p>
+                <a href="" class="topics">Inicio de sesión y registro</a>
+                <a href="" class="topics">Creación de bentos familiares</a>
+                <a href="" class="topics">Subir fotografías</a>
+                <a href="" class="topics">Privacidad y seguridad</a>
+                <a href="" class="topics">Problemas técnicos y errores</a>
+            </div>
+
+        </main>
+        <footer>
+            <p>© 2024 FamilyRoots. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+    <script src="js/suport.js"></script>
+</body>
+</html>

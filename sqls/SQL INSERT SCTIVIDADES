@@ -1,0 +1,12 @@
+
+INSERT INTO `actividades` (`id`, `nombre`, `lugar`, `cooperativa`)
+VALUES ( 'Plantar tomates', 'Huerta Carrasco', 'Lovegreen');
+
+INSERT INTO `actividades` (, `nombre`, `lugar`, `cooperativa`)
+VALUES ( 'Recogida libros', 'Huerta Plaza españa', 'WeAreMadrid');
+
+INSERT INTO `actividades` (, `nombre`, `lugar`, `cooperativa`)
+VALUES ( 'Tarde de teatro', 'Huerto SanJose', 'PalacioVerde');
+
+INSERT INTO `actividades` ( `nombre`, `lugar`, `cooperativa`)
+VALUES (' 'Revision de olivos', 'Huerto Felicdiad', 'Abuelitas');
