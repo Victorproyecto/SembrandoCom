@@ -30,7 +30,7 @@ try {
     // Manejo de errores en caso de fallo en la ejecución
     echo "Error en la inserción:1 " . $e->getMessage();
 }
-
+/*
 //Una vez registrado mantener la sesión iniciada.
 try {
     session_start();
@@ -68,7 +68,7 @@ try {
     // Manejo de errores en caso de fallo en la ejecución
     echo "Error en la inserción3: " . $e->getMessage();
 }
-
+*/
 //Redirige a la pagina de perfil.
 header("Location: ../vista/profile.html");
 exit();
