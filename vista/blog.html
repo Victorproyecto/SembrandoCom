@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Sembrando Comunidad</title>
+    <link rel="stylesheet" href="../vista/css/styles lucia.css">
+
+</head>
+<body>
+     <!-- Placeholder para el header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="blog-section">
+            <h2>BLOG</h2>
+
+            <div class="filtro-busquedas">
+                <input type="text" class="search-bar" placeholder="Buscador">
+            </div>
+        <div class="filtros-contenedor">
+            <div class="filtro-fecha">
+                <label for="categorias">Filtrar por fecha:</label>
+                    <select id="fecha" name="fecha">
+                        <option value="recientes">Más recientes primero</option>
+                        <option value="antiguos">Más antiguos primero</option>
+                     </select>
+            </div>
+
+            <div class="filtro-categorias">
+                <label for="categorias">Filtrar por categorías:</label>
+                    <select id="categorias" name="categorias">
+                        <option value="todas">Todas</option>
+                         <option value="categoria1">Categoría 1</option>
+                        <option value="categoria2">Categoría 2</option>
+                         <option value="categoria3">Categoría 3</option>
+                        <option value="categoria4">Categoría 4</option>
+                        <option value="categoria5">Categoría 5</option>
+                    </select>
+            </div>
+        </div>
+
+            <div class="blog-posts">
+                <article class="post">
+                    <div class="post-thumbnail"></div>
+                    <div class="post-content">
+                        <h3>Título</h3>
+                        <p>Autor - Fecha</p>
+                        <p class="post-preview">Previsualización Artículo: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor mi eget rutrum bibendum.</p>
+                        <a href="articuloBlog.html">
+                            <button class="btn-leer">Leer más</button>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-thumbnail"></div>
+                    <div class="post-content">
+                        <h3>Título</h3>
+                        <p>Autor - Fecha</p>
+                        <p class="post-preview">Previsualización Artículo: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor mi eget rutrum bibendum.</p>
+                        <a href="articuloBlog.html">
+                            <button class="btn-leer">Leer más</button>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-thumbnail"></div>
+                    <div class="post-content">
+                        <h3>Título</h3>
+                        <p>Autor - Fecha</p>
+                        <p class="post-preview">Previsualización Artículo: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor mi eget rutrum bibendum.</p>
+                        <a href="articuloBlog.html">
+                            <button class="btn-leer">Leer más</button>
+                        </a>
+                    </div>
+                </article>
+
+                <button class="load-more">Cargar más</button>
+            </div>
+        </section>
+
+        <div id="footer-placeholder"></div>
+    </main>
+<script src="../vista/js/header_footer.js"></script>
+</body>
+</html>

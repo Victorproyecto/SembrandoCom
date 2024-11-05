@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campañas Publicitarias - Sembrando Comunidad</title>
+    <link rel="stylesheet" href="../vista/css/styles lucia.css">
+</head>
+<body>
+    <!-- Header cargado dinámicamente -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Sección de Campañas Publicitarias -->
+        <section class="campanias-publicitarias">
+            <h1 class="titulo-seccion">CAMPAÑAS PUBLICITARIAS</h1>
+
+            <div class="contenedor">
+                <!-- Columna izquierda: Historial de campañas -->
+                <div class="historial-campanias">
+                    <h2>Historial de Campañas</h2>
+
+                    <!-- Filtro por fecha -->
+                    <div class="filtro-fecha">
+                        <label for="filtro-fecha">Fecha</label>
+                        <select id="filtro-fecha">
+                            <option value="fecha">Fecha</option>
+                            <!-- Otras opciones -->
+                        </select>
+                    </div>
+
+                    <!-- Listado de campañas -->
+                    <div class="lista-campanias">
+                        <div class="campania">
+                            <h3>Nombre campaña</h3>
+                            <p>Fecha campaña</p>
+                            <p>Estado</p>
+                            <button class="btn-detalles">Detalles</button>
+                        </div>
+                        <div class="campania">
+                            <h3>Nombre campaña</h3>
+                            <p>Fecha campaña</p>
+                            <p>Estado</p>
+                            <button class="btn-detalles">Detalles</button>
+                        </div>
+                        <div class="campania">
+                            <h3>Nombre campaña</h3>
+                            <p>Fecha campaña</p>
+                            <p>Estado</p>
+                            <button class="btn-detalles">Detalles</button>
+                        </div>
+                        <!-- Añade más campañas según sea necesario -->
+                    </div>
+                </div>
+
+                <!-- Columna derecha: Crear nueva campaña -->
+                <div class="crear-campania">
+                    <h2>Crear nueva campaña</h2>
+
+                    <form action="tu_controlador.php" method="POST" enctype="multipart/form-data">
+                        <!-- Título de la campaña -->
+                        <div class="form-group">
+                            <label for="titulo">Título</label>
+                            <input type="text" id="titulo" name="titulo" placeholder="Introduce un título de 200 caracteres" maxlength="200" required>
+                        </div>
+
+                        <!-- Cargar imagen -->
+                        <div class="form-group">
+                            <label for="imagen">Cargar imagen</label>
+                            <input type="file" id="imagen" name="imagen" required>
+                        </div>
+
+                        <!-- URL de redirección -->
+                        <div class="form-group">
+                            <label for="url">URL de redirección</label>
+                            <input type="url" id="url" name="url" placeholder="Introduce la URL de redirección" required>
+                        </div>
+
+                        <!-- Botón para elegir paquete publicitario -->
+                        <button type="submit" class="btn-paquete-publicitario">Elige tu paquete publicitario</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer cargado dinámicamente -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Incluir el archivo JavaScript -->
+    <script src="../vista/js/header_footer.js"></script>
+</body>
+</html>
