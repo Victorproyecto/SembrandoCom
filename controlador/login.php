@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         unset($_SESSION['error_login']);
 
         //Redirige a la pagina de perfil de usuario.
-        header("Location: ../vista/bento.html");
+        header("Location: ../vista/actividades.html");
         exit();
     }else{
         //Contraseña o email incorrectos

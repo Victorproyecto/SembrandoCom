@@ -57,6 +57,6 @@ try {
 }
 
 //Redirige a la pagina de perfil.
-header("Location: ../vista/bento.html");
+header("Location: ../vista/actividades.html");
 exit();
 ?>
