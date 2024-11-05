@@ -4,7 +4,7 @@
 		$host = "localhost";
 		$user = "root";
 		$pass = "";
-		$baseDatos = "family_roots";
+		$baseDatos = "SembrandoCom";
 
 		$conexion = mysqli_connect($host, $user, $pass, $baseDatos);
 

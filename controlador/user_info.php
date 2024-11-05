@@ -15,7 +15,7 @@ if(isset($_SESSION['id_usuario'])){
     echo json_encode($datosUser);
     exit();
 }else{
-    echo json_encode(['error' => 'No se ha iniciado sesión.']);
+    echo json_encode(['error' => 'No se ha iniciado sesion.']);
 }
 
 $datosUsuario = getUserData($idUsuario);
