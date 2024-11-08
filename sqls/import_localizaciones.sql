@@ -1,11 +1,3 @@
-CREATE table if not EXISTS voluntarios (
-    dni VARCHAR(9) PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
-    apellidos VARCHAR(50) NOT NULL,
-    fecha_nacimiento DATE NOT NULL,
-    correo_electronico VARCHAR(100) NOT NULL unique,
-    es_premium BOOLEAN DEFAULT false
-);
 
 
 CREATE TABLE comunidades_autonomas (
@@ -7395,50 +7387,9 @@ INSERT INTO municipios (id, id_provincia, codigo_postal, nombre) VALUES (7359, 4
 INSERT INTO municipios (id, id_provincia, codigo_postal, nombre) VALUES (7360, 45, '01138', 'Zigoitia/Cigoitia');
 INSERT INTO municipios (id, id_provincia, codigo_postal, nombre) VALUES (7361, 45, '01130', 'Zuia/Zuya');
 
-CREATE TABLE cooperativas (
-    nif VARCHAR(15) PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    direccion VARCHAR(255) NOT NULL,
-    id_municipio INT NOT NULL,
-    FOREIGN KEY (id_municipio) REFERENCES municipios(id)
-);
-
-
-CREATE TABLE huertos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    direccion VARCHAR(255) NOT NULL,
-    id_municipio INT NOT NULL,
-    id_cooperativa VARCHAR(15),
-    aforo INT NOT NULL,
-    FOREIGN KEY (id_municipio) REFERENCES municipios(id),
-    FOREIGN KEY (id_cooperativa) REFERENCES cooperativas(nif)
-);
 
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (1, 'Huerto 1', 'Calle Falsa 123', 1, 5);
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (2, 'Huerto 2', 'Calle Falsa 456', 1, 10);
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (3, 'Huerto 3', 'Calle Falsa 789', 1, 15);
 
 
-CREATE TABLE actividades (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT,
-    direccion VARCHAR(255) NOT NULL,
-    id_municipio INT NOT NULL,
-    nif_cooperativa VARCHAR(15) NOT NULL,
-    id_huerto INT,
-    FOREIGN KEY (id_municipio) REFERENCES municipios(id),
-    FOREIGN KEY (nif_cooperativa) REFERENCES cooperativas(nif),
-    FOREIGN KEY (id_huerto) REFERENCES huertos(id)
-);
-
-
-CREATE TABLE usuarios_actividad (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    dni_voluntario VARCHAR(9) NOT NULL,
-    id_actividad INT NOT NULL,
-    fecha_inscripcion DATE NOT NULL,
-    FOREIGN KEY (dni_voluntario) REFERENCES voluntarios(dni),
-    FOREIGN KEY (id_actividad) REFERENCES actividades(id)
-);
