@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi suscripción - Sembrando Comunidad</title>
+    <link rel="stylesheet" href="../css/styles_oscar.css">
+  
+
+</head>
+<body>
+    <main>
+        <!--Colocación del header-->
+        <div id="header-placeholder"></div>
+
+            <!--Sección Mi suscripción-->    
+            <section class="mi-suscripcion">
+                <h2>Mi suscripción</h2>
+                <h4>Obtén acceso a contenido adicional y eventos exclusivos</h4><br>
+                
+                <!-- Detalles de la Suscripción -->
+                <div class="detalles-suscripcion">
+                    <h3>Detalles de mi Suscripción</h3>
+                    <p><strong>Plan:</strong> Premium Anual</p><br>
+                    <p><strong>Fecha de Inicio:</strong> 15 de enero de 2024</p><br>
+                    <p><strong>Fecha de Renovación:</strong> 15 de enero de 2025</p><br>
+                    <p><strong>Precio:</strong> 45€/año</p><br>
+                    <label for="cambiar-plan"><strong>CAMBIAR PLAN</strong></label>
+                    <select name="cambiar-plan" id="cambiar-plan">
+                        <option value="mensual">Mensual (3,99€/mes)</option>
+                        <option value="trimestral">Trimestral (9,99€/trimestre)</option>
+                        <option value="anual">Anual (45€/año)</option>
+                    </select>
+
+                </div>
+                
+                <!-- Opciones de Pago -->
+                <div class="opciones-pago">
+                
+                    <!-- Selección de método de pago -->
+                    <div class="modulo-pago">
+                        <h3>Cambiar Método de Pago</h3>
+                        <!-- Selección de método de pago -->
+                        <label for="metodo-pago">Elige cómo quieres pagar tu suscripción:</label>
+                        <select id="metodo-pago" name="metodo-pago" onchange="mostrarFormularioPago()">
+                            <option value="">Selecciona un método</option>
+                            <option value="tarjeta">Tarjeta de Crédito</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="transferencia">Transferencia Bancaria</option>
+                        </select>
+                
+                        <!-- Formulario para Tarjeta de Crédito -->
+                        <div id="formulario-tarjeta" class="formulario-pago" style="display: none;">
+                            <h4>Información de Tarjeta de Crédito</h4>
+                            <label for="numero-tarjeta">Número de Tarjeta:</label>
+                            <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
+                            
+                            <label for="fecha-vencimiento">Fecha de Vencimiento:</label>
+                            <input type="text" id="fecha-vencimiento" name="fecha-vencimiento" placeholder="MM/AA">
+                            
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="XXX">
+                        </div>
+                
+                        <!-- Formulario para PayPal -->
+                        <div id="formulario-paypal" class="formulario-pago" style="display: none;">
+                            <h4>Información de PayPal</h4>
+                            <label for="correo-paypal">Correo Electrónico de PayPal:</label>
+                            <input type="email" id="correo-paypal" name="correo-paypal" placeholder="usuario@ejemplo.com">
+                        </div>
+                
+                        <!-- Formulario para Transferencia Bancaria -->
+                        <div id="formulario-transferencia" class="formulario-pago" style="display: none;">
+                            <h4>Información de Transferencia Bancaria</h4>
+                            <label for="numero-banco">Número de cuenta:</label>
+                            <input type="text" id="numero-banco" name="numero-banco" placeholder="ESXX-XXXX-XXXX-XX-XXXXXXXXXX">
+                        </div>
+                
+                        <!-- Botón de guardar -->
+                        <form action="some_action" method="POST">
+                            <button type="submit" class="boton">Guardar Método de Pago</button>
+                        </form>
+                    </div>
+                    <br>
+                
+                <!-- Gestión de la Suscripción -->
+                <div class="gestion-suscripcion">
+                    <h3>Gestión de la Suscripción</h3>
+                    <p>Decide si quieres activar tu suscripción, pausarla por un tiempo, o cancelarla definitivamente:</p>
+                    <button class="btn-activar">Activar Suscripción</button>
+                    <button class="btn-pausar">Pausar Suscripción</button>
+                    <button class="btn-cancelar">Cancelar Suscripción</button>
+                </div>
+            </section>
+        
+        
+        <!--Colocación del footer-->
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <!--Incluimos los archivos JavaScript-->
+    <script src="../script_suscripcion.js"></script>
+    <script src="../header-footer.js"></script>
+</body>
+</html>
