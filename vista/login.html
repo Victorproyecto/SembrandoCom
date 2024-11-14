@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>FamilyRoots/login</title>
+    <link rel="stylesheet" href="css/styles_oscar.css">
+    <title>Sembrando Comunidad - Login</title>
 </head>
 <body>
     <header>
         <nav>
-            <div id="logo-nav">
-                <img src="img/fondosLogos/SembrandoCom3.png" style="height: 150px; width: auto;" alt="logoFamilyRoots">
+            <div class="header-container">
+                <div id="logo-nav" class="logo-container">
+                    <img src="img/imagenes/logo.png" alt="Logo Sembrando Comunidad" class="logo-nav-img">
+                </div>
             </div>
         </nav>
     </header>
-    <main id="login">
-        <div class="left-column">
 
-        </div>
-        <div class="central-column" id="margin-bot">
-            <img id="logoCentral" src="img/fondosLogos/logoCentral.png"  style = 'margin-bottom : -70px' alt="logoCentral">
-            <p class="message">Empezar a formar parte del verde.</p>
-        </div>
-        <div class="right-column">
+    <main id="login">
+        <div class="login-container">
+            <div class="logo-container-central">
+                <img id="logoCentral" src="img/imagenes/logo.png" alt="Logo Central">
+            </div>
+            <div class="message-container">
+                <p class="message">Volver a las raíces</p>
+            </div>
             <form action="../controlador/login.php" class="login-form" method="post">
-                
                 <label for="email" class="label">Correo electrónico</label>
                 <input type="email" id="email" name="email" class="input" placeholder="example@email.com" required>
     
@@ -38,15 +39,17 @@
                 <span>o</span>
                 <hr class="hr-login">
             </div>
-            <a id="btn-google" href=""></a>
-            <p class="login-footer">¿No tienes una cuenta?<a class="link-sub" rel="stylesheet" href="register.html"> Regístrate</a></p>
+            <a id="btn-google" href="#">Iniciar sesión con Google</a>
+            <p class="login-footer">¿No tienes una cuenta? <a class="link-sub" href="register.html">Regístrate</a></p>
         </div>
     </main>
+
     <footer>
-        <p>© 2024 FamilyRoots. Todos los derechos reservados.</p>
+        <p>© 2024 Sembrando Comunidad. Todos los derechos reservados.</p>
     </footer>
-        <script src="js/login.js"></script>
-        <script src="https://accounts.google.com/gsi/client" async defer></script>
-        <script src="js/alerts.js"></script>
+
+    <script src="js/login.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="js/alerts.js"></script>
 </body>
 </html>
