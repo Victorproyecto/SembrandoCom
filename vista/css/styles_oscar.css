@@ -138,6 +138,188 @@ h3 {
 h4 {
     text-align: center;
 }
+/* LOGIN */
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F9FBE7;  /* Fondo blanco crema */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header-container {
+    background-color: #8bc34a; /* Fondo verde */
+    padding: 1px;
+}
+
+.logo-container {
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.logo-nav-img {
+    max-width: 80px;  /* Tamaño más pequeño del logo en la cabecera */
+    height: auto;
+}
+
+/* Main Content Styles */
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh; /* Para que ocupe toda la altura de la pantalla */
+    box-sizing: border-box;
+}
+
+.background-image-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.background-image {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8;  /* Ajustar la opacidad para que se vea más sutil */
+}
+
+.login-container {
+    background-color: #fffac7;  /* Fondo naranja */
+    padding: 30px;
+    border-radius: 15px;  /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Sombra para el contenedor */
+    max-width: 400px;
+    width: 100%;
+}
+
+.logo-container-central {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#logoCentral {
+    max-width: 150px;
+    height: auto;
+}
+
+.message-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.message {
+    color: #212121;  /* Gris oscuro */
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.label {
+    color: #212121;
+    font-weight: bold;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #8bc34a;  /* Verde primario */
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;  /* Ambos inputs tienen el mismo ancho */
+}
+
+.input:focus {
+    border-color: #ff5722;  /* Naranja (acción/link) al enfocarse */
+}
+
+.btn-login {
+    padding: 12px;
+    background-color: #ff5722;  /* Naranja */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #e64a19;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.hr-login {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background-color: #8bc34a;  /* Verde primario */
+}
+
+.separator span {
+    margin: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #212121;
+}
+
+#btn-google {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #8bc34a;  /* Verde primario */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#btn-google:hover {
+    background-color: #7cb342;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #212121;
+    color: #F9FBE7;
+    font-size: 14px;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-sub {
+    color: #ff5722;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-sub:hover {
+    text-decoration: underline;
+}
 
 
 /* SECCIÓN MI SUSCRIPCIÓN */
