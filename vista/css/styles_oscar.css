@@ -138,6 +138,205 @@ h3 {
 h4 {
     text-align: center;
 }
+/* REGISTRO */
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Todo el viewport para el body */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9FBE7; /* Color de fondo general */
+}
+
+/* Header Styles */
+.header-container {
+    background-color: #8bc34a; /* Fondo verde */
+    padding: 1px;
+    width: 1350px;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    text-align: left;
+    padding: 5px 20px; /* Ajustar el padding para evitar desplazar el contenido */
+}
+
+.logo-nav-img {
+    max-width: 70px;  /* Tamaño más pequeño del logo en la cabecera */
+    height: auto;
+}
+
+/* Main Content Styles */
+#register {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;  /* Asegura que el formulario esté sobre el fondo */
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.register-container {
+    background-color: #ff5722;  /* Fondo naranja */
+    padding: 30px;
+    border-radius: 15px;  /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Sombra para el contenedor */
+    width: 100%;
+    box-sizing: border-box;  /* Asegura que el padding no expanda el ancho del contenedor */
+}
+
+.logo-container-central {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#logoCentral {
+    max-width: 100px;
+    height: auto;
+}
+
+.message-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.message {
+    color: #212121;  /* Gris oscuro */
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.label {
+    color: #212121;
+    font-weight: bold;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #8bc34a;  /* Verde primario */
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: calc(100% - 20px);  /* Asegura que los campos tengan el mismo ancho */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Espaciado adicional entre campos */
+}
+
+.checkbox {
+    margin-left: 10px;
+}
+
+.input:focus {
+    border-color: #ff5722;  /* Naranja (acción/link) al enfocarse */
+}
+
+.btn-register {
+    padding: 12px;
+    background-color: #8bc34a;  /* Naranja */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: 100%;  /* Botón con ancho completo del contenedor */
+}
+
+.btn-register:hover {
+    background-color: #7cb342;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.hr-register {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background-color: #8bc34a;  /* Verde primario */
+}
+
+.separator span {
+    margin: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #212121;
+}
+
+#btn-google {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #8bc34a;  /* Verde primario */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#btn-google:hover {
+    background-color: #7cb342;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9fbe7;
+    color: #212121;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Footer and Register Footer */
+.register-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-sub {
+    color: #ff5722;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-sub:hover {
+    text-decoration: underline;
+}
+
 /* LOGIN */
 /* General Styles */
 body {

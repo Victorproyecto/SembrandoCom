@@ -1,59 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SembrandoCom/register</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles_oscar.css">
+    <title>Sembrando Comunidad - Registro</title>
 </head>
 <body>
     <header>
         <nav>
-            <div id="logo-nav">
-                <img src="img/fondosLogos/SembrandoCom3.png" style="height: 150px; width: auto;" alt="logoFamilyRoots">
+            <div class="header-container">
+                <div id="logo-nav" class="logo-container">
+                    <img src="img/imagenes/logo.png" alt="Logo Sembrando Comunidad" class="logo-nav-img">
+                </div>
             </div>
         </nav>
     </header>
+
     <main id="register">
-        <div class="left-column">
+        <div class="content-container">
+            <div class="register-container">
+                <div class="logo-container-central">
+                    <img id="logoCentral" src="img/imagenes/logo.png" alt="Logo Central">
+                </div>
+                <div class="message-container">
+                    <p class="message">Volver a las raíces</p>
+                </div>
+                <form action="../controlador/register.php" method="post" class="register-form">
+                    <label class="label" for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="input" placeholder="Albert Castro" required>
+        
+                    <label class="label" for="fecha">Fecha de nacimiento</label>
+                    <input type="date" name="fecha" id="fecha" class="input" required>
 
-        </div>
-        <div class="central-column" id="margin-bot">
-            <img id="logoCentral" src="img/fondosLogos/logoCentral.png" style = 'margin-bottom : -70px' alt="logoCentral">
-            <p class="message">Empezar a formar parte del verde.</p>
-        </div>
-        <div class="right-column">
-            <form action="../controlador/register.php" method="post" class="login-form">
-                <label class="label" for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" class="input" placeholder="Albert Castro">
-    
-                <label class="label" for="fecha">Fecha de nacimiento</label>
-                <input type="date" name="fecha" id="fecha" class="input">
+                    <label for="email" class="label">Correo electrónico</label>
+                    <input type="email" name="email" id="email" class="input" placeholder="example@email.com" required>
+        
+                    <label for="password" class="label">Contraseña</label>
+                    <input type="password" name="password" id="password" class="input" placeholder="mínimo 8 caracteres" required>
 
-                <label for="email" class="label">Correo electrónico</label>
-                <input type="email" name="email" id="email" class="input" placeholder="example@email.com">
-    
-                <label for="password" class="label">Contraseña</label>
-                <input type="password" name="password" id="password" class="input" placeholder="mínimo 8 caracteres">
+                    <label class="admin label">Registrarse como cooperativa
+                        <input type="checkbox" name="admin" id="admin" class="checkbox">
+                    </label>
 
-                <label  class="admin label">Register as Admin
-                <input type="checkbox" name="admin" id="admin" class="input">
-                </label>
-
-                <button class="btn-login" type="submit">Regístrate</button>
-            </form>
-            <div class="separator">
-                <hr class="hr-login">
-                <span>o</span>
-                <hr class="hr-login">
+                    <button class="btn-register" type="submit">Regístrate</button>
+                </form>
+                <div class="separator">
+                    <hr class="hr-register">
+                    <span>o</span>
+                    <hr class="hr-register">
+                </div>
+                <a id="btn-google" href="#">Regístrate con Google</a>
+                <p class="register-footer">¿Ya tienes una cuenta? <a class="link-sub" href="login.html">Inicia Sesión</a></p>
             </div>
-            <a id="btn-google" href=""></a>
-                <p class="login-footer">¿Ya tienes una cuenta?<a class="link-sub" rel="stylesheet" href="login.html"> Inicia Sesión</a></p>
         </div>
     </main>
+
     <footer>
-        <p>© 2024 SembrandoCom. Todos los derechos reservados.</p>
+        <p>© 2024 Sembrando Comunidad. Todos los derechos reservados.</p>
     </footer>
+
     <script src="js/login.js"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </body>
