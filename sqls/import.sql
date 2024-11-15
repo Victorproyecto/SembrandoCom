@@ -1,5 +1,12 @@
-
-
+CREATE table if not EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellidos VARCHAR(50) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    correo_electronico VARCHAR(100) NOT NULL unique,
+    es_premium BOOLEAN DEFAULT false
+    );
+/*
 CREATE TABLE comunidades_autonomas (
     id INT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL UNIQUE
@@ -20,14 +27,7 @@ CREATE TABLE municipios (
     FOREIGN KEY (id_provincia) REFERENCES provincias(id)
 );
 
-CREATE table if not EXISTS usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
-    apellidos VARCHAR(50) NOT NULL,
-    fecha_nacimiento DATE NOT NULL,
-    correo_electronico VARCHAR(100) NOT NULL unique,
-    es_premium BOOLEAN DEFAULT false
-    );
+
 
 CREATE TABLE cooperativas (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -8142,5 +8142,5 @@ INSERT INTO municipios (id, id_provincia, codigo_postal, nombre) VALUES (8101, 5
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (1, 'Huerto 1', 'Calle Falsa 123', 1, 5);
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (2, 'Huerto 2', 'Calle Falsa 456', 1, 10);
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (3, 'Huerto 3', 'Calle Falsa 789', 1, 15);
-
+*/
 
