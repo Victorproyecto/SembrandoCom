@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantalla de Inicio Usuario - Sembrando Comunidad</title>
+    <title>Mi usuario - Sembrando Comunidad</title>
     <link rel="stylesheet" href="../vista/css/styles lucia.css">
+    <link rel="stylesheet" href="../vista/css/styles header-footer.css">
 </head>
 <body>
 
@@ -34,11 +35,11 @@
         <div class="contenedor-dos-columnas-body">
             <!-- Sección de nuevas ofertas -->
             <section class="nuevas-ofertas">
-                <h2>Nuevas ofertas</h2>
+                <h2>Nuevas actividades</h2>
                 <div class="oferta">
                     <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Imagen cooperativa">
                     <div class="detalles-oferta">
-                        <h3>Título anuncio</h3>
+                        <h3>Título actividad</h3>
                         <p>Fecha publicación</p>
                         <p>Ubicación</p>
                     </div>
@@ -46,7 +47,7 @@
                 <div class="oferta">
                     <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Imagen cooperativa">
                     <div class="detalles-oferta">
-                        <h3>Título anuncio</h3>
+                        <h3>Título actividad</h3>
                         <p>Fecha publicación</p>
                         <p>Ubicación</p>
                     </div>
@@ -54,7 +55,7 @@
                 <div class="oferta">
                     <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Imagen cooperativa">
                     <div class="detalles-oferta">
-                        <h3>Título anuncio</h3>
+                        <h3>Título actividad</h3>
                         <p>Fecha publicación</p>
                         <p>Ubicación</p>
                     </div>
@@ -68,13 +69,13 @@
                     <a href="blog.html">Blog</a>
                 </div>
                 <div class="area">
-                    <a href="conexion.html">Área de Conexión</a>
+                    <a href="misActividades.html">Mis actividades</a>
                 </div>
                 <div class="area">
-                    <a href="eventos.html">Eventos</a>
+                    <a href="zonasVerdes.html">Zonas verdes</a>
                 </div>
                 <div class="area">
-                    <a href="suscripcion.html">Mi suscripción</a>
+                    <a href="miSuscripcion.html">Mi suscripción</a>
                 </div>
             </section>
         </div>
@@ -83,6 +84,44 @@
 
     <!-- Footer cargado dinámicamente -->
     <div id="footer-placeholder"></div>
+
+    <script>
+        // Función para obtener actividades desde el controlador
+        async function fetchActividades() {
+            try {
+                console.log("u");
+                const response = await fetch('../controlador/get_actividades.php');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const actividades = await response.json();
+                displayActividades(actividades);
+            } catch (error) {
+                console.error('Hubo un problema con la petición Fetch:', error);
+            }
+        }
+    
+        // Función para mostrar las actividades en el HTML
+        function displayActividades(actividades) {
+            const container = document.getElementById('actividades-container');
+            container.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevas actividades
+    
+            actividades.forEach(actividad => {
+                const actividadDiv = document.createElement('div');
+                actividadDiv.classList.add('actividad');
+                actividadDiv.innerHTML = `
+                        <h2>${actividad.nombre}</h2>
+                        <p><strong>Lugar:</strong> ${actividad.lugar}</p>
+                        <p><strong>Cooperativa:</strong> ${actividad.cooperativa}</p>
+                        <p><strong>Fecha:</strong> 09/10/25</p>
+                    `;
+                container.appendChild(actividadDiv);
+            });
+        }
+    
+        // Llamar a la función para obtener actividades al cargar la página
+        fetchActividades();
+    </script>
 
     <script src="../vista/js/header_footer.js"></script>
 </body>
