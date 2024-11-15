@@ -56,6 +56,8 @@ CREATE TABLE actividades (
     id_municipio INT NOT NULL,
     id_cooperativa INT NOT NULL,
     id_huerto INT,
+    fecha DATE NOT NULL,
+    es_premium BOOLEAN DEFAULT false,
     FOREIGN KEY (id_municipio) REFERENCES municipios(id),
     FOREIGN KEY (id_cooperativa) REFERENCES cooperativas(id),
     FOREIGN KEY (id_huerto) REFERENCES huertos(id)
@@ -8142,5 +8144,7 @@ INSERT INTO municipios (id, id_provincia, codigo_postal, nombre) VALUES (8101, 5
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (1, 'Huerto 1', 'Calle Falsa 123', 1, 5);
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (2, 'Huerto 2', 'Calle Falsa 456', 1, 10);
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (3, 'Huerto 3', 'Calle Falsa 789', 1, 15);
+
+INSERT INTO cooperativas(id, nombre, direccion, id_municipio) VALUES (1, 'Test', 'Test', 1);
 
 
