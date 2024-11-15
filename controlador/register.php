@@ -21,9 +21,9 @@ $_POST['is_admin'] = 1;
 try {
     //Insertar los datos en la bbdd
     $conexion = crearConexion();
-    $query = $conexion->prepare("INSERT INTO usuario (nom_usuario, email, pass, fecha_nacimiento, imagen_perfil, is_admin) VALUES (?, ?, ?, ?, ?, ?)");
+    $query = $conexion->prepare("INSERT INTO usuarios (nombre, correo_electronico , pass, fecha_nacimiento, is_admin) VALUES (?, ?, ?, ?, ?, ?)");
 
-    $query->bind_param("ssssss", $nombre, $email, $hashed_password, $fecha_nacimiento, $defaultImg, $is_admin);
+    $query->bind_param("ssssss", $nombre, $email, $hashed_password, $fecha_nacimiento, $is_admin);
     $query->execute();
 
 }catch (PDOException $e) {
