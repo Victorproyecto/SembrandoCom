@@ -1,0 +1,161 @@
+/*COMPONENTES*/
+/* Header */
+.navbar {
+    background-color: #8bc34a;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F9FBE7; /* Color de fondo */
+    color: #212121; /* Color de texto */
+}
+
+h1, h2, h3 {
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #212121;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+/*Menu*/
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.menu li a:hover {
+    color: #ff5722;
+}
+
+
+/* Submenú */
+.menu li ul {
+    display: none; /* Oculta el submenú por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8bc34a; /* Color de fondo del submenú */
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px; /* Ancho mínimo para el submenú */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el submenú */
+}
+
+.menu li ul li {
+    margin: 0; /* Remueve el margen del submenú */
+}
+
+.menu li ul li a {
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu li ul li a:hover {
+    background-color: #ff5722; /* Color de fondo al pasar el ratón */
+}
+
+/* Mostrar el submenú al pasar el cursor */
+.menu li:hover > ul {
+    display: block;
+}
+
+
+/* Newsletter */
+.newsletter-section {
+    background-color: #8bc34a;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.newsletter-section h2 {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    color: #212121;
+    margin-bottom: 10px;
+}
+
+.newsletter-section p {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: #212121;
+    margin-bottom: 15px;
+}
+
+.newsletter-section input {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.subscribe-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.subscribe-btn:hover {
+    background-color: #e64a19;
+}
+/* Footer */
+footer {
+    background-color: #8bc34a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons .icon {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    margin: 0 10px;
+    border-radius: 50%;
+}
