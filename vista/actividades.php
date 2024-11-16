@@ -12,23 +12,23 @@ session_start();
 
 </head>
 <body>
-    <!-- Header cargado dinámicamente -->
-    <div id="header-placeholder"></div>
-    <main>
-        <!-- Lista de Actividades -->
-        <section class="lista-actividades">
-            <h2>Mis Actividades</h2>
-            <div id="actividades-container">
+<!-- Header cargado dinámicamente -->
+<div id="header-placeholder"></div>
+<main>
+    <!-- Lista de Actividades -->
+    <section class="lista-actividades">
+        <h2>Mis Actividades</h2>
+        <div id="actividades-container">
 
-            </div>
-            <!-- Añadir más actividades según sea necesario -->
-        </section>
-    </main>
+        </div>
+        <!-- Añadir más actividades según sea necesario -->
+    </section>
+</main>
 
-    <!-- Footer cargado dinámicamente -->
-    <div id="footer-placeholder"></div>
+<!-- Footer cargado dinámicamente -->
+<div id="footer-placeholder"></div>
 
-    <script src="../vista/js/header_footer.js"></script>
+<script src="../vista/js/header_footer.js"></script>
 </body>
 </html>
 
@@ -36,7 +36,7 @@ session_start();
     // Función para obtener actividades desde el controlador
     async function fetchActividades() {
         try {
-            const response = await fetch('../controlador/get_actividades_usuario.php');
+            const response = await fetch('../controlador/get_actividades.php');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -59,7 +59,7 @@ session_start();
             // Crear el contenido de la actividad
             actividadDiv.innerHTML = `
                     <div class="actividad-thumbnail"></div>
-                    <div class="actividad-contenido">
+                    <div class="actividad-contenido ">
                         <h3>${actividad.nombre}</h3>
                         <p>Organizado por: Cooperativa Verde</p>
                         <p><span>Fecha: 12/12/2023</span> | <span>Ubicación: ${actividad.direccion}</span></p>
