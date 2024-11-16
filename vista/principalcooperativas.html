@@ -1,4 +1,62 @@
 <!DOCTYPE html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .profile-header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .profile-header img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-right: 20px;
+    }
+    .profile-header h1 {
+        margin: 0;
+        font-size: 2em;
+        color: #333;
+    }
+    .profile-header p {
+        margin: 5px 0;
+        font-size: 1.1em;
+        color: #666;
+    }
+    .profile-info {
+        margin-top: 20px;
+    }
+    .profile-info h2 {
+        color: #333;
+    }
+    .profile-info p {
+        font-size: 1.1em;
+        color: #444;
+    }
+    .profile-info .label {
+        font-weight: bold;
+        color: #333;
+    }
+    .profile-footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 0.9em;
+        color: #888;
+    }
+</style>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -16,10 +74,35 @@
         <!-- Título de la sección -->
         <section class="principal-cooperativa">
             <h1>MI COOPERATIVA</h1>
-            <div class="info-cooperativa">
-                <!-- <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Imagen cooperativa">-->
-                <p>Nombre cooperativa</p>
-                <a href="perfil.html">Mi perfil</a> | <a href="logout.html">Cerrar sesión</a>
+            <div class="container">
+                <form action="../controlador/register.php" method="POST">
+                    <div class="profile-info">
+                        <h2>Datos Personales</h2>
+                        <ul>
+                            <li>
+                                <span class="label">Nombre:</span>
+                                <input type="text" name="nombre" value="Juan" placeholder="Introduce tu nombre">
+                            </li>
+                            <li>
+                                <span class="label">Dirección:</span>
+                                <input type="text" name="direccion" value="Calle Tal, Madrid, España" placeholder="Introduce tu dirección">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-info">
+                        <h2>Descripción</h2>
+                        <textarea name="descripcion" rows="4" placeholder="Escribe una breve descripción sobre ti"></textarea>
+                    </div>
+
+                    <div class="profile-footer">
+                        <button type="submit">Guardar Cambios</button>
+                    </div>
+                </form>
+
+                <div class="profile-footer">
+                    <p>Última actualización: 16 de noviembre de 2024</p>
+                </div>
             </div>
         </section>
 
