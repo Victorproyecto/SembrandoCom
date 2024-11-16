@@ -39,4 +39,18 @@ function getUserData($idUsuario){
     return $usuario;
 }
 
+function obtenerUsuario($idUsuario) {
+    $conexion = crearConexion();
+    $query = "SELECT count(*) FROM usuarios WHERE id = ?";
+    $state = $conexion->prepare($query);
+    $state -> bind_param('i', $idUsuario);
+    $state->execute();
+    $result = $state->get_result();
+    $usuario = null;
+    if ($result->num_rows > 0) {
+        $usuario = $result->fetch_assoc();
+    }
+    return $usuario;
+}
+
 ?>
