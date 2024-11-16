@@ -1099,7 +1099,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     height: 200px; 
 }
 
-/*Botones enlaces páginas actividadez y huertos*/
+/*Botones enlaces páginas actividades y huertos*/
 .contenedor-btns {
     display: flex; /* Activa Flexbox */
     justify-content: center; /* Centra horizontalmente */
