@@ -876,6 +876,11 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 
 /* PAGINA PRINCIPAL DE COOPERATIVAS */
+.contenedor-principal{
+   
+}
+
+
 /* Mis Tareas */
 .mis-tareas, .nueva-tarea, .mi-calendario, .solicitudes, .nuevo-mensaje, .gestion-voluntarios {
     background-color: #fff;
