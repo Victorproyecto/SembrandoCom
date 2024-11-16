@@ -34,7 +34,7 @@
 
                 <!-- Campos adicionales requeridos por el script PHP -->
                 <input type="hidden" name="idMunicipio" value="1"> <!-- Esto debería ser dinámico -->
-                <input type="hidden" name="idCooperativa" value="1"> <!-- Debes colocar aquí el valor correcto del idCooperativa, posiblemente extraído de la sesión del usuario -->
+                <input type="hidden" name="idCooperativa" value="3"> <!-- Debes colocar aquí el valor correcto del idCooperativa, posiblemente extraído de la sesión del usuario -->
                 <input type="hidden" id="idHuerto" name="idHuerto" value=""> <!-- Actualizado dinámicamente según el huerto seleccionado -->
 
                 <button type="submit" class="btn-crear">Crear Actividad</button>
@@ -44,16 +44,9 @@
         <!-- Columna derecha: Mis actividades -->
         <section class="mis-actividades">
             <h2>Mis Actividades</h2>
-            <div class="actividad">
-                <h3>Nombre de la Actividad</h3>
-                <p>Descripción breve de la actividad...</p>
-                <p><strong>Fecha:</strong> 2024-12-01</p>
-                <p><strong>Dirección:</strong> Calle Ejemplo, 123</p>
-                <p><strong>Premium:</strong> No</p>
-                <button class="btn-editar">Editar</button>
-                <button class="btn-eliminar">Eliminar</button>
+            <div id="actividades-container">
+                <!-- Aquí se cargarán las actividades dinámicamente -->
             </div>
-            <!-- Repetir bloque div.actividad para más actividades -->
         </section>
     </main>
 
@@ -110,10 +103,46 @@
             });
         }
 
-        // Llamar a la función para obtener los huertos al cargar la página
+        // Función para obtener las actividades desde el controlador
+        async function fetchActividades(idCooperativa) {
+            try {
+                const response = await fetch(`../controlador/get_actividades.php?idCooperativa=${idCooperativa}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const actividades = await response.json();
+                displayActividades(actividades);
+            } catch (error) {
+                console.error('Hubo un problema con la petición Fetch:', error);
+            }
+        }
+
+        // Función para mostrar las actividades en la sección "Mis Actividades"
+        function displayActividades(actividades) {
+            const container = document.getElementById('actividades-container');
+            container.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevas actividades
+
+            actividades.forEach(actividad => {
+                const actividadDiv = document.createElement('div');
+                actividadDiv.classList.add('actividad');
+                actividadDiv.innerHTML = `
+                    <h3>${actividad.nombre}</h3>
+                    <p><strong>Descripción:</strong> ${actividad.descripcion}</p>
+                    <p><strong>Fecha:</strong> ${actividad.fecha}</p>
+                    <p><strong>Dirección:</strong> ${actividad.direccion}</p>
+                    <p><strong>Premium:</strong> ${actividad.esPremium ? 'Sí' : 'No'}</p>
+                    <button class="btn-editar">Editar</button>
+                    <button class="btn-eliminar">Eliminar</button>
+                `;
+                container.appendChild(actividadDiv);
+            });
+        }
+
+        // Llamar a las funciones para obtener los huertos y las actividades al cargar la página
         // Aquí debes usar el id de la cooperativa actual. Podrías obtenerlo de la sesión o de alguna otra forma
         const idCooperativa = 1; // Esto debe ser dinámico dependiendo de la cooperativa que esté usando la página
         fetchHuertos(idCooperativa);
+        fetchActividades(idCooperativa);
 
         // Llamar a la función para actualizar idHuerto al cargar la página
         updateIdHuerto();

@@ -53,4 +53,15 @@ function obtenerUsuario($idUsuario) {
     return $usuario;
 }
 
+function obtenerIdByEmail($email) {
+    $conexion = crearConexion();
+    $query = "SELECT id FROM usuarios WHERE correo_electronico = ?";
+    $state = $conexion->prepare($query);
+    $state -> bind_param('s', $email);
+    $state->execute();
+    $result = $state->get_result();
+
+    return $result->fetch_assoc();
+}
+
 ?>

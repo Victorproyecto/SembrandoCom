@@ -1,5 +1,5 @@
 <?php
-
+include_once '../modelo/user.php';
 //Iniciar sesión
 session_start();
 
@@ -13,12 +13,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     //Verificar las credenciales del usuario
     $usuario = verificarCredenciales($email, $password);
-var_dump($password, $usuario['password']);
+
     //Verificar la contraseña
     if($usuario && verificarPass($password, $usuario['password'])) {
         //Las credenciales son validas, iniciar sesión
-        $_SESSION['id_usuario'] = $usuario['id_usuario'];
-        $_SESSION['email'] = $usuario['email'];
+        $_SESSION['id_usuario'] = obtenerIdByEmail($email);
+        $_SESSION['email'] = $email;
         unset($_SESSION['error_login']);
 
         //Redirige a la pagina de perfil de usuario.

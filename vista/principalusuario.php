@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,71 +11,38 @@
     <link rel="stylesheet" href="../vista/css/styles header-footer.css">
 </head>
 <body>
-
     <!-- Header cargado dinámicamente -->
     <div id="header-placeholder"></div>
-
     <main class="main-perfil-usuario">
         <!-- Contenedor de dos columnas -->
         <div class="contenedor-dos-columnas">
         <!-- Sección de información del usuario -->
         <section class="seccion-usuario">
-            <div class="usuario-info">
-                <img src="../vista/img/imagenes/perfil-placeholder.png" alt="Foto de perfil" class="foto-perfil">
-                <p>@username</p>
-                <p>Pequeño texto de introducción del usuario</p>
-            </div>
-        </section>
-            <section class="seccion-usuario">
-            <div class="usuario-opciones">
-                <button class="btn-opcion">Historial de participación</button>
-                <button class="btn-opcion">Ajustes</button>
-                <button class="btn-opcion">Información de usuario</button>
-            </div>
+            <form action="../controlador/register.php" method="POST">
+                <div class="profile-info">
+                    <h2>Datos Personales</h2>
+                    <ul>
+                        <li>
+                            <span class="label">Nombre:</span>
+                            <input type="text" name="nombre" value="<?php echo $_SESSION['nombre_usuario']; ?>" placeholder="Introduce tu nombre">
+                        </li>
+                        <li>
+                            <span class="label">email:</span>
+                            <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>" placeholder="Introduce tu dirección">
+                        </li>
+                    </ul>
+                </div>
+
+            </form>
         </section>
         </div>
         <!-- Contenedor de dos columnas -->
         <div class="contenedor-dos-columnas-body">
             <!-- Sección de nuevas ofertas -->
-            <section class="nuevas-ofertas">
-                <h2>Nuevas actividades</h2>
-                <div class="oferta">
-                    <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Imagen cooperativa">
-                    <div class="detalles-oferta">
-                        <h3>Título actividad</h3>
-                        <p>Fecha publicación</p>
-                        <p>Ubicación</p>
-                    </div>
-                </div>
-                <div class="oferta">
-                    <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Imagen cooperativa">
-                    <div class="detalles-oferta">
-                        <h3>Título actividad</h3>
-                        <p>Fecha publicación</p>
-                        <p>Ubicación</p>
-                    </div>
-                </div>
-                <div class="oferta">
-                    <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Imagen cooperativa">
-                    <div class="detalles-oferta">
-                        <h3>Título actividad</h3>
-                        <p>Fecha publicación</p>
-                        <p>Ubicación</p>
-                    </div>
-                </div>
-                <button class="btn-cargar-mas">Cargar más</button>
-            </section>
-
             <!-- Accesos directos a otras áreas -->
             <section class="accesos-areas">
                 <div class="area">
-                    <a href="blog.html">Blog</a>
-                </div>
-                <div class="area">
-                    <a href="misActividades.html">Mis actividades</a>
-                </div>
-                <div class="area">
-                    <a href="zonasVerdes.html">Zonas verdes</a>
+                    <a href="misActividades.php">Mis actividades</a>
                 </div>
                 <div class="area">
                     <a href="miSuscripcion.html">Mi suscripción</a>
@@ -86,6 +56,8 @@
     <div id="footer-placeholder"></div>
 
     <script>
+
+
         // Función para obtener actividades desde el controlador
         async function fetchActividades() {
             try {

@@ -1,13 +1,12 @@
 <?php
-
-//Inicia sesión si no está iniciada
+// logout.php
 session_start();
 
-//Destruye todas las variables de la sesión
-session_destroy();
+// Destruir la sesión
+session_unset();  // Elimina las variables de sesión
+session_destroy();  // Destruye la sesión
 
-//Redirigir a index.html
-header('Location: ../vista/index.html');
+// Redirige a la página de inicio
+header("Location: ../vista/index.php");
 exit();
-
 ?>

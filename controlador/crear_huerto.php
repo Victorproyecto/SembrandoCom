@@ -13,17 +13,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         $nombre = parametroPost("nombre");
         $direccion = parametroPost("direccion");
-        $idMunicipio = parametroPost("idMunicipio");
         $idCooperativa = parametroPost("idCooperativa"); 
         $aforo = parametroPost("aforo");
 
-        if(!$nombre || !$direccion || !$aforo || !verificarMunicipio($idMunicipio) || !verificarCooperativa($idCooperativa)) {
+        if(!$nombre || !$direccion || !$aforo || !verificarCooperativa($idCooperativa)) {
             http_response_code(400);
             return;
         }
 
-        crearHuerto($nombre, $direccion, $idMunicipio, $idCooperativa, $aforo);
-       
+        crearHuerto($nombre, $direccion, $idCooperativa, $aforo);
+        $_SESSION['mensaje'] = 'Actividad creada exitosamente';
+        // Redirige de nuevo a la página de actividades
+        header('Location: ../vista/huertos_cooperativas.html'); 
+        exit();
     }catch(PDOException $e) {
         echo "Error en la insercion: " . $e->getMessage();
     }
@@ -36,7 +38,7 @@ function parametroPost($parametro) {
     return null;
 }
 
-function verificarMunicipio($idMunicipio) {
+/*function verificarMunicipio($idMunicipio) {
     if($idMunicipio) {
         if(!obtenerMunicipio($idMunicipio)) {
             return false;
@@ -46,7 +48,7 @@ function verificarMunicipio($idMunicipio) {
     else {
         return false;
     }
-}
+}*/
 
 function verificarCooperativa($idCooperativa) {
     if($idCooperativa) {
