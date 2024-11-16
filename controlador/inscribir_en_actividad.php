@@ -1,7 +1,6 @@
 <?php
 include_once '../modelo/actividad.php';
 include_once '../modelo/user.php';
-include_once '../modelo/huerto.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -28,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         $usuariosInscritos = usuariosInscritosEnActividad($idActividad);
-        $huerto = obtenerHuerto($actividad['id_huerto']);
+        
 
-        if($usuariosInscritos >= $huerto["aforo"]){
+        if($usuariosInscritos >= $actividad["aforo"]){
             http_response_code(400);
             return;
         }
