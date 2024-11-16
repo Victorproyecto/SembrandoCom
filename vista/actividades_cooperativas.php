@@ -23,6 +23,9 @@
                 <label for="direccion-huerto">Selecciona el Huerto:</label>
                 <select id="direccion-huerto" name="direccion" required>
                     <option value="">Seleccione un huerto</option>
+                    <?php foreach($huertos as $huerto){?>
+                        <option value='<?php echo $huerto["id"]?>'><?php echo $huerto["nombre"]?></option>
+                    <?php }?>
                 </select>
 
                 <input type="date" name="fecha" required>
