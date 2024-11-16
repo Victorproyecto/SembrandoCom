@@ -2,11 +2,12 @@
 include_once '../modelo/huerto.php';
 include_once '../modelo/municipio.php';
 include_once '../modelo/cooperativa.php';
+include_once 'funciones.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-session_start();
+validarSesionIniciada();
 
 header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -27,28 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: ../vista/huertos_cooperativas.html'); 
         exit();
     }catch(PDOException $e) {
-        echo "Error en la insercion: " . $e->getMessage();
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()]);
     }
 }
-
-function parametroPost($parametro) {
-    if(isset($_POST[$parametro])) {
-        return $_POST[$parametro];
-    }
-    return null;
-}
-
-/*function verificarMunicipio($idMunicipio) {
-    if($idMunicipio) {
-        if(!obtenerMunicipio($idMunicipio)) {
-            return false;
-        }
-        return true;
-    }
-    else {
-        return false;
-    }
-}*/
 
 function verificarCooperativa($idCooperativa) {
     if($idCooperativa) {

@@ -3,13 +3,14 @@ include_once '../modelo/db_connection.php';
 include_once '../modelo/actividad.php';
 include_once '../modelo/user.php';
 include_once '../modelo/huerto.php';
+include_once 'funciones.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$conexion = crearConexion();
+validarSesionIniciada();
 
-session_start();
+$conexion = crearConexion();
 
 header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -44,10 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         header('Content-Type: application/json');
         echo json_encode($actividades);
 
-    }catch
-        (PDOException $e) {
-            // Manejo de errores en caso de fallo en la ejecución
-            echo "Error en la seleccion: " . $e->getMessage();
+    }
+    catch(PDOException $e) {
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()]);
     }
 }
 

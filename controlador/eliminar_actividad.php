@@ -1,8 +1,11 @@
 <?php
 include_once '../modelo/actividad.php';
+include_once 'funciones.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+validarSesionIniciada();
 
 header('Content-Type: application/json');
 
@@ -31,6 +34,6 @@ try {
     }
 } catch (PDOException $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Error en la conexión: ' . $e->getMessage()]);
+    echo json_encode(['error' => $e->getMessage()]);
 }
 ?>
