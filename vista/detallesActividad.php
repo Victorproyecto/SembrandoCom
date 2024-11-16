@@ -15,24 +15,31 @@
     <main>
         <!-- Sección de Detalles de la Actividad -->
         <section class="detalles-actividad">
-            <h1>Nombre de la Actividad</h1>
+            <h1><?php echo $actividad["nombre"] ?></h1>
             
             <div class="info-actividad">
-                <p><strong>Fecha:</strong> 12/12/2023</p>
-                <p><strong>Ubicación:</strong> Parque del Retiro, Madrid</p>
-                <p><strong>Capacidad:</strong> 15 usuarios inscritos / 20</p>
-                <p><strong>Organizado por:</strong> Cooperativa Verde</p>
+                <p><strong>Fecha:</strong><?php echo $actividad["fecha"] ?></p>
+                <p><strong>Ubicación:</strong><?php echo $actividad["direccion"] ?></p>
+                <p><strong>Capacidad:</strong><?php echo $actividad["aforo"] ?></p>
+                <p><strong>Organizado por:</strong><?php echo $cooperativa["nombre"] ?></p>
 
             </div>
             <div class="imagen-actividad">
                 <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Foto de lugar" class="foto-lugar">
             </div>
             <div class="descripcion-actividad">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non elit rutrum, sollicitudin est et, suscipit eros. Vivamus auctor, mi eget rutrum bibendum, sapien dui lacinia lectus, at maximus quam nunc a massa. Etiam auctor, felis et venenatis bibendum, ipsum nulla pharetra justo, at dictum nunc ligula sit amet erat. Integer consequat ac elit ut auctor.</p>
+                <p><?php echo $actividad["descripcion"] ?></p>
             </div>
 
             <div class="tipo-actividad premium">
-                Premium
+                <?php 
+                    if($actividad["es_premium"] == 0) {
+                        echo "Gratuita";
+                    } 
+                    else {
+                        echo "Premium";
+                    }
+                ?>
             </div>
             
             <button class="btn-inscripcion">Inscribirse</button>
