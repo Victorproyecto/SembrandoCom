@@ -33,9 +33,9 @@ function obtenerHuerto($id){
 
 function crearHuerto($nombre, $direccion, $idCooperativa, $aforo){
     $conexion = crearConexion();
-    $query = "INSERT INTO huertos(nombre,direccion,id_municipio,id_cooperativa,aforo) VALUES (?,?,?,?,?)";
+    $query = "INSERT INTO huertos(nombre,direccion,id_cooperativa,aforo) VALUES (?,?,?,?)";
     $state = $conexion->prepare($query);
-    $state -> bind_param('ssiii', $nombre, $direccion, $idCooperativa, $aforo);
+    $state -> bind_param('ssii', $nombre, $direccion, $idCooperativa, $aforo);
     return $state->execute();
 }
 
