@@ -4,6 +4,50 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Header Styles */
+.header-container {
+    background-color: #8bc34a; /* Fondo verde */
+    padding: 1px;
+    width: 1350px;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    text-align: left;
+    padding: 5px 20px; /* Ajustar el padding para evitar desplazar el contenido */
+}
+
+.logo-nav-img {
+    max-width: 70px;  /* Tamaño más pequeño del logo en la cabecera */
+    height: auto;
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9fbe7;
+    color: #212121;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Footer and Register Footer */
+.register-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-sub {
+    color: #ff5722;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-sub:hover {
+    text-decoration: underline;
+}
 
 /*VISTAS*/
 /* Blog*/
