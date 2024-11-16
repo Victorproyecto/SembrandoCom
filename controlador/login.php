@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $_SESSION['id_usuario'] = obtenerIdByEmail($email);
         $_SESSION['email'] = $email;
         $_SESSION['nombre'] = obtenerNombreById($_SESSION['id_usuario']);
+        $_SESSION['cooperativa'] =esCooperativa($_SESSION['id_usuario']);
 
         var_dump($_SESSION);
         unset($_SESSION['error_login']);

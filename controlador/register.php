@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+include_once '../modelo/user.php';
 error_reporting(E_ALL);
 
 include_once "../modelo/db_connection.php";
@@ -64,6 +65,7 @@ try {
     $_SESSION['nombre'] = $nombre;
     $_SESSION['cooperativa'] = $cooperativa;
     $_SESSION['email'] = $email;
+    $_SESSION['cooperativa'] =esCooperativa($id_usuario);
 
 }catch (PDOException $e) {
     // Manejo de errores en caso de fallo en la ejecución
