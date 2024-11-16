@@ -1,10 +1,11 @@
 <?php
 include_once '../modelo/huerto.php';
+include_once 'funciones.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-session_start();
+validarSesionIniciada();
 
 header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -21,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         }
         echo json_encode($huerto);
     }catch(PDOException $e) {
-        echo "Error en la seleccion: " . $e->getMessage();
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()]);
     }
 }
 ?>
