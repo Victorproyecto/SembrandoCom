@@ -5,7 +5,7 @@ include_once "../modelo/db_connection.php";
 //Función para verificar las credenciales del usuario
 function verificarCredenciales($email, $password){
     $conexion = crearConexion();
-    $query = "SELECT id_usuario, email, pass, tipo_usuario FROM usuario WHERE email=?";
+    $query = "SELECT id, correo_electronico, password, es_premium FROM usuarios WHERE correo_electronico=?";
     $state = $conexion -> prepare($query);
 
     //Vincula los parámetros y ejecuta la consulta
@@ -23,6 +23,7 @@ function verificarCredenciales($email, $password){
 function verificarPass($password, $hash){
     //Verifica si la pass coincide con la almacenada en la bbdd
     return password_verify($password, $hash);
+    //password_verify($password, $hash);
 }
 
 //Recuperar los datos del usuario
