@@ -2,11 +2,11 @@
 
 include_once "../modelo/db_connection.php";
 
-function crearActividad($nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium){
+function crearActividad($nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium, $aforo){
     $conexion = crearConexion();
-    $query = "INSERT INTO actividades(nombre, descripcion, direccion, id_municipio, id_cooperativa, id_huerto, fecha, es_premium) VALUES (?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO actividades(nombre, descripcion, direccion, id_municipio, id_cooperativa, id_huerto, fecha, es_premium, aforo) VALUES (?,?,?,?,?,?,?,?,?)";
     $state = $conexion->prepare($query);
-    $state -> bind_param('sssiiiss', $nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium);
+    $state -> bind_param('sssiiissi', $nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium, $aforo);
     return $state->execute();
 }
 
