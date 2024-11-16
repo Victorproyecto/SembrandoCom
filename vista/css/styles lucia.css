@@ -1076,3 +1076,100 @@ input[type="text"], input[type="file"], input[type="url"] {
     cursor: pointer;
     margin-top: 10px;
 }
+/*ACTIVIDADES COOPERATIVAS*/
+/* Estilo general del contenedor principal */
+.contenedor-principal {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Columna izquierda: Crear actividad */
+.crear-actividad {
+    background-color: #F9FBE7;
+    padding: 20px;
+    border-radius: 8px;
+    width: 48%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crear-actividad h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #A9401D;
+    margin-bottom: 15px;
+}
+
+.crear-actividad form input,
+.crear-actividad form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-crear {
+    background-color: #8bc34a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Columna derecha: Mis actividades */
+.mis-actividades {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 48%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mis-actividades h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #A9401D;
+    margin-bottom: 15px;
+}
+
+.actividad {
+    background-color: #F9FBE7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.actividad h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #A9401D;
+    margin-bottom: 10px;
+}
+
+.actividad p {
+    font-family: 'Montserrat', sans-serif;
+    color: #212121;
+    margin-bottom: 5px;
+}
+
+.btn-editar {
+    background-color: #ff9800;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-eliminar {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
