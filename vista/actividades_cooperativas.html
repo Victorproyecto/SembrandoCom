@@ -15,16 +15,22 @@
         <!-- Columna izquierda: Crear actividad -->
         <section class="crear-actividad">
             <h2>Crear Actividad</h2>
-            <form form action="../controlador/crear_actividad.php   " id="form-crear-actividad" method="post" >
-                <input type="text" placeholder="Nombre de la actividad" required>
-                <textarea placeholder="Descripción de la actividad" required></textarea>
-                <input type="text" placeholder="Dirección" required>
-                <input type="date" placeholder="Fecha" required>
+            <form id="form-crear-actividad" action="../controlador/crear_actividad.php" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre de la actividad" required>
+                <textarea name="descripcion" placeholder="Descripción de la actividad" required></textarea>
+                <input type="text" name="direccion" placeholder="Dirección" required>
+                <input type="date" name="fecha" required>
                 <label>
                     Actividad Premium:
-                    <input type="checkbox">
+                    <input type="checkbox" name="esPremium" value="1">
                 </label>
-                <input type="number" placeholder="Número de voluntarios" required>
+                <input type="number" name="numeroVoluntarios" placeholder="Número de voluntarios" required>
+
+                <!-- Campos adicionales requeridos por el script PHP -->
+                <input type="hidden" name="idMunicipio" value="1"> <!-- Esto debería ser dinámico -->
+                <input type="hidden" name="idCooperativa" value="1"> <!-- Debes colocar aquí el valor correcto del idCooperativa, posiblemente extraído de la sesión del usuario -->
+                <input type="hidden" name="idHuerto" value="1"> <!-- Esto debería ser dinámico si aplica -->
+
                 <button type="submit" class="btn-crear">Crear Actividad</button>
             </form>
         </section>

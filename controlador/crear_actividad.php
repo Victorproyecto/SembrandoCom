@@ -41,7 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //Insertamos la actividad
         crearActividad($nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium, $aforo);
-       
+        $_SESSION['mensaje'] = 'Actividad creada exitosamente';
+       // Redirige de nuevo a la página de actividades
+       header('Location: ../vistas/actividades_cooperativas.html'); 
+       exit();
     }catch(PDOException $e) {
         echo "Error en la insercion: " . $e->getMessage();
     }
