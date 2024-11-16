@@ -24,9 +24,6 @@
                 <p><strong>Organizado por:</strong><?php echo $cooperativa["nombre"] ?></p>
 
             </div>
-            <div class="imagen-actividad">
-                <img src="../vista/img/imagenes/cooperativa-placeholder.png" alt="Foto de lugar" class="foto-lugar">
-            </div>
             <div class="descripcion-actividad">
                 <p><?php echo $actividad["descripcion"] ?></p>
             </div>
