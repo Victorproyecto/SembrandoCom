@@ -920,9 +920,7 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 
 /* PAGINA PRINCIPAL DE COOPERATIVAS */
-.contenedor-principal{
-   
-}
+
 
 
 /* Mis Tareas */
@@ -1038,7 +1036,122 @@ input[type="text"], input[type="file"], input[type="url"] {
     border-radius: 5px;
     cursor: pointer;
 }
-/*PAGINA PRINCIPAL COOPERATIVAS*/
+
+/*Información del perfil*/
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+
+}
+.profile-info h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #A9401D;
+    margin-bottom: 15px;
+}
+
+
+.container {
+    width: 700px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.profile-header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.profile-header p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #666;
+}
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-info p {
+    font-size: 1.1em;
+    color: #444;
+}
+.profile-info .label {
+    font-weight: bold;
+    color: #333;
+    width: 500px;
+    text-align: left;
+}
+
+.profile-info input{
+    width: 500px;
+}
+
+
+.profile-footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.profile-info textarea {
+    width: 70%; 
+    height: 200px; 
+}
+
+/*Botones enlaces páginas actividadez y huertos*/
+.contenedor-btns {
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px;
+}
+
+.boton-actividades {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #A9401D;
+    color: #212121; 
+    text-decoration: none;
+    border-radius: 5px; 
+    font-size: 1rem; 
+    text-align: center; 
+    transition: background-color 0.3s; 
+}
+
+.boton-actividades:hover {
+    background-color: #ff5722; 
+}
+
+.boton-huertos {
+    display: inline-block; 
+    padding: 10px 20px;
+    background-color: #8bc34a; 
+    color: #212121; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-size: 1rem;
+    text-align: center; 
+    transition: background-color 0.3s; 
+}
+
+.boton-huertos:hover {
+    background-color: #ff5722; 
+}
+
+
+
+
 /* Sección Mi Calendario */
 .seccion-calendario {
     padding: 20px;

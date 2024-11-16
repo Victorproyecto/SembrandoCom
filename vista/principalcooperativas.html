@@ -1,62 +1,4 @@
 <!DOCTYPE html>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        width: 80%;
-        margin: 20px auto;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-    }
-    .profile-header {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    .profile-header img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        margin-right: 20px;
-    }
-    .profile-header h1 {
-        margin: 0;
-        font-size: 2em;
-        color: #333;
-    }
-    .profile-header p {
-        margin: 5px 0;
-        font-size: 1.1em;
-        color: #666;
-    }
-    .profile-info {
-        margin-top: 20px;
-    }
-    .profile-info h2 {
-        color: #333;
-    }
-    .profile-info p {
-        font-size: 1.1em;
-        color: #444;
-    }
-    .profile-info .label {
-        font-weight: bold;
-        color: #333;
-    }
-    .profile-footer {
-        margin-top: 30px;
-        text-align: center;
-        font-size: 0.9em;
-        color: #888;
-    }
-</style>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -72,22 +14,17 @@
 
     <main>
         <!-- Título de la sección -->
+
+        <h1>MI COOPERATIVA</h1>
         <section class="principal-cooperativa">
-            <h1>MI COOPERATIVA</h1>
             <div class="container">
                 <form action="../controlador/register.php" method="POST">
                     <div class="profile-info">
                         <h2>Datos Personales</h2>
-                        <ul>
-                            <li>
-                                <span class="label">Nombre:</span>
-                                <input type="text" name="nombre" value="Juan" placeholder="Introduce tu nombre">
-                            </li>
-                            <li>
-                                <span class="label">Dirección:</span>
-                                <input type="text" name="direccion" value="Calle Tal, Madrid, España" placeholder="Introduce tu dirección">
-                            </li>
-                        </ul>
+                        <span class="label">Nombre:</span>
+                        <input type="text" name="nombre" value="Juan" placeholder="Introduce tu nombre">
+                        <span class="label">Dirección:</span>
+                        <input type="text" name="direccion" value="Calle Tal, Madrid, España" placeholder="Introduce tu dirección">
                     </div>
 
                     <div class="profile-info">
@@ -106,9 +43,15 @@
             </div>
         </section>
 
-        <!-- Sección principal con las tareas y solicitudes -->
+        <div class="contenedor-btns">
+            <a href="actividades_cooperativas.html" class="boton-actividades">Mis actividades</a>
+            <a href="zonasVerdes.html" class="boton-huertos">Gestionar mis huertos</a>
+        </div>
+
+        
+        <!-- Sección principal con las tareas y solicitudes
         <section class="contenedor-principal">
-            <!-- Mis Tareas -->
+            Mis Tareas
             <div class="mis-tareas">
                 <h2>Mis actividades</h2>
                 <div class="tarea">
@@ -125,9 +68,9 @@
                     <button class="btn-tarea">Marcar como cubierta</button>
                     <button class="btn-tarea">Gestionar</button>
                 </div>
-            </div>
+            </div>-->
 
-            <!-- Añadir nueva tarea -->
+            <!-- Añadir nueva tarea 
             <div class="nueva-tarea">
                 <h2>Añadir nueva actividad</h2>
                 <form>
@@ -140,7 +83,7 @@
                 </form>
             </div>
 
-            <!-- Mi calendario de tareas
+             Mi calendario de tareas
             <div class="mi-calendario">
                 <h2>Mi calendario de tareas</h2>
                 <img src="../imagenes/calendario-placeholder.png" alt="Calendario de tareas">
@@ -188,8 +131,8 @@
                     <button class="btn-contacto">Contacto</button>
                 </div>
             </div>
-        </section>
-    </main>-->
+        </section>-->
+    </main>
 
     <!-- Footer cargado dinámicamente -->
     <div id="footer-placeholder"></div>
