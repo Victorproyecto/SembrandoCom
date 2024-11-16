@@ -18,18 +18,24 @@
             <form id="form-crear-actividad" action="../controlador/crear_actividad.php" method="POST">
                 <input type="text" name="nombre" placeholder="Nombre de la actividad" required>
                 <textarea name="descripcion" placeholder="Descripción de la actividad" required></textarea>
-                <input type="text" name="direccion" placeholder="Dirección" required>
+
+                <!-- Campo desplegable para los huertos -->
+                <label for="direccion-huerto">Selecciona el Huerto:</label>
+                <select id="direccion-huerto" name="direccion" required>
+                    <option value="">Seleccione un huerto</option>
+                </select>
+
                 <input type="date" name="fecha" required>
                 <label>
                     Actividad Premium:
                     <input type="checkbox" name="esPremium" value="1">
                 </label>
-                <input type="number" name="numeroVoluntarios" placeholder="Número de voluntarios" required>
+                <input type="number" name="aforo" placeholder="Número de voluntarios" required>
 
                 <!-- Campos adicionales requeridos por el script PHP -->
                 <input type="hidden" name="idMunicipio" value="1"> <!-- Esto debería ser dinámico -->
                 <input type="hidden" name="idCooperativa" value="1"> <!-- Debes colocar aquí el valor correcto del idCooperativa, posiblemente extraído de la sesión del usuario -->
-                <input type="hidden" name="idHuerto" value="1"> <!-- Esto debería ser dinámico si aplica -->
+                <input type="hidden" id="idHuerto" name="idHuerto" value=""> <!-- Actualizado dinámicamente según el huerto seleccionado -->
 
                 <button type="submit" class="btn-crear">Crear Actividad</button>
             </form>
@@ -54,6 +60,63 @@
     <!-- Footer cargado dinámicamente -->
     <div id="footer-placeholder"></div>
 
+    <!-- Script para cargar el header y footer -->
     <script src="../vista/js/header_footer_coop.js"></script>
+
+    <!-- Script para cargar los huertos relacionados a la cooperativa y actualizar el campo idHuerto -->
+    <script>
+        // Función para obtener los huertos desde el controlador
+        async function fetchHuertos(idCooperativa) {
+            try {
+                const response = await fetch(`../controlador/get_huertos.php?idCooperativa=${idCooperativa}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const huertos = await response.json();
+                displayHuertos(huertos);
+            } catch (error) {
+                console.error('Hubo un problema con la petición Fetch:', error);
+            }
+        }
+
+        // Función para mostrar los huertos en el campo de dirección (select)
+        function displayHuertos(huertos) {
+            const selectHuerto = document.getElementById('direccion-huerto');
+            selectHuerto.innerHTML = ''; // Limpiar el contenido antes de agregar nuevas opciones
+
+            // Crear la opción predeterminada
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.text = 'Seleccione un huerto';
+            selectHuerto.appendChild(defaultOption);
+
+            // Agregar las opciones de huertos
+            huertos.forEach(huerto => {
+                const option = document.createElement('option');
+                option.value = huerto.id;
+                option.text = huerto.nombre;
+                selectHuerto.appendChild(option);
+            });
+        }
+
+        // Función para actualizar el campo idHuerto dinámicamente
+        function updateIdHuerto() {
+            const selectHuerto = document.getElementById('direccion-huerto');
+            const idHuertoInput = document.getElementById('idHuerto');
+
+            // Actualizar el campo idHuerto cuando se selecciona un huerto
+            selectHuerto.addEventListener('change', () => {
+                idHuertoInput.value = selectHuerto.value;
+            });
+        }
+
+        // Llamar a la función para obtener los huertos al cargar la página
+        // Aquí debes usar el id de la cooperativa actual. Podrías obtenerlo de la sesión o de alguna otra forma
+        const idCooperativa = 1; // Esto debe ser dinámico dependiendo de la cooperativa que esté usando la página
+        fetchHuertos(idCooperativa);
+
+        // Llamar a la función para actualizar idHuerto al cargar la página
+        updateIdHuerto();
+    </script>
 </body>
 </html>

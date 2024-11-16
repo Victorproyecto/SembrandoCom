@@ -21,11 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $esPremium = parametroPost("esPremium");
         $aforo = parametroPost("aforo");
 
+
         //SI no me viene un parametro declarado como NOT NULL en la BBDD, devuelvo un error
         if(!$nombre || !$direccion || !$fecha || !verificarCooperativa($idCooperativa) || !$idHuerto || !$aforo) {
             http_response_code(400);
             return;
         }
+     
 
         $huerto = obtenerHuerto($idHuerto);
 
@@ -43,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         crearActividad($nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium, $aforo);
         $_SESSION['mensaje'] = 'Actividad creada exitosamente';
        // Redirige de nuevo a la página de actividades
-       header('Location: ../vistas/actividades_cooperativas.html'); 
+       header('Location: ../vista/actividades_cooperativas.html'); 
        exit();
     }catch(PDOException $e) {
         echo "Error en la insercion: " . $e->getMessage();
