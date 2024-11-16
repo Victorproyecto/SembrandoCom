@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <nav class="navbar">
     <div class="logo">
         <a href="principalusuario.php">
@@ -16,9 +19,12 @@
         <li><a href="principalusuario.php">Mi perfil</a>
             <ul>
                 <li><a href="miSuscripcion.html">Mi suscripción</a></li>
+                <?php if (isset($_SESSION['cooperativa']) && $_SESSION['cooperativa'] == true): ?>
+                <li><a href="principalcooperativas.html">Mi cooperativa</a></li>
+                <?php endif; ?>
                 <li><a href="../controlador/logout.php">Logout</a></li>
             </ul>
         </li>
-
     </ul>
+</nav>
 </nav>
