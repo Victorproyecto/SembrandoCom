@@ -1,11 +1,20 @@
 CREATE table if not EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
-    apellidos VARCHAR(50) NOT NULL,
+
     fecha_nacimiento DATE NOT NULL,
     correo_electronico VARCHAR(100) NOT NULL unique,
     es_premium BOOLEAN DEFAULT false
     );
+CREATE TABLE `cooperativas` (
+                                `id` int(11) NOT NULL,
+                                `nombre` varchar(100) NOT NULL,
+                                `direccion` varchar(255) NOT NULL,
+                                `id_usuario` int(11) NOT NULL
+)
+ALTER TABLE `cooperativas`
+    ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_usuario_id` (`id_usuario`);
 
 CREATE TABLE comunidades_autonomas (
     id INT PRIMARY KEY,
@@ -29,13 +38,7 @@ CREATE TABLE municipios (
 
 
 
-CREATE TABLE cooperativas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    direccion VARCHAR(255) NOT NULL,
-    id_municipio INT NOT NULL,
-    FOREIGN KEY (id_municipio) REFERENCES municipios(id)
-);
+
 
 CREATE TABLE huertos (
     id INT AUTO_INCREMENT PRIMARY KEY,
