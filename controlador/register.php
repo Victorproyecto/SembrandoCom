@@ -61,7 +61,7 @@ try {
     session_start();
     $id_usuario = $conexion->insert_id;
     $_SESSION['id_usuario'] = $id_usuario;
-    $_SESSION['nombre_usuario'] = $nombre;
+    $_SESSION['nombre'] = $nombre;
     $_SESSION['cooperativa'] = $cooperativa;
     $_SESSION['email'] = $email;
 
