@@ -53,12 +53,12 @@ CREATE TABLE actividades (
     nombre VARCHAR(100) NOT NULL,
     descripcion TEXT,
     direccion VARCHAR(255) NOT NULL,
-    id_municipio INT NOT NULL,
+    id_municipio INT,
     id_cooperativa INT NOT NULL,
     id_huerto INT,
     fecha DATE NOT NULL,
     es_premium BOOLEAN DEFAULT false,
-    FOREIGN KEY (id_municipio) REFERENCES municipios(id),
+    aforo INT NOT NULL,
     FOREIGN KEY (id_cooperativa) REFERENCES cooperativas(id),
     FOREIGN KEY (id_huerto) REFERENCES huertos(id)
 );

@@ -1,6 +1,5 @@
 <?php
 include_once '../modelo/huerto.php';
-include_once '../modelo/municipio.php';
 include_once '../modelo/cooperativa.php';
 include_once '../modelo/actividad.php';
 ini_set('display_errors', 1);
@@ -20,15 +19,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $idHuerto = parametroPost("idHuerto");
         $fecha = parametroPost("fecha");
         $esPremium = parametroPost("esPremium");
+        $aforo = parametroPost("aforo");
 
         //SI no me viene un parametro declarado como NOT NULL en la BBDD, devuelvo un error
-        if(!$nombre || !$direccion || !$fecha | !verificarMunicipio($idMunicipio) || !verificarCooperativa($idCooperativa) || !verificarHuerto($idHuerto)) {
+        if(!$nombre || !$direccion || !$fecha || !verificarCooperativa($idCooperativa) || !$idHuerto || !$aforo) {
+            http_response_code(400);
+            return;
+        }
+
+        $huerto = obtenerHuerto($idHuerto);
+
+        if(!$huerto) {
+            http_response_code(404);
+            return;
+        }
+
+        if($aforo > $huerto["aforo"]){
             http_response_code(400);
             return;
         }
 
         //Insertamos la actividad
-        crearActividad($nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium);
+        crearActividad($nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium, $aforo);
        
     }catch(PDOException $e) {
         echo "Error en la insercion: " . $e->getMessage();
@@ -40,18 +52,6 @@ function parametroPost($parametro) {
         return $_POST[$parametro];
     }
     return null;
-}
-
-function verificarMunicipio($idMunicipio) {
-    if($idMunicipio) {
-        if(!obtenerMunicipio($idMunicipio)) {
-            return false;
-        }
-        return true;
-    }
-    else {
-        return false;
-    }
 }
 
 function verificarCooperativa($idCooperativa) {
@@ -66,15 +66,5 @@ function verificarCooperativa($idCooperativa) {
     }
 }
 
-function verificarHuerto($idHuerto) {
-    if($idHuerto) {
-        if(!obtenerHuerto($idHuerto)) {
-            return false;
-        }
-        return true;
-    }
-    else {
-        return true;
-    }
-}
+
 ?>
