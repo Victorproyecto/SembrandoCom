@@ -63,7 +63,7 @@ try {
     $_SESSION['id_usuario'] = $id_usuario;
     $_SESSION['nombre_usuario'] = $nombre;
     $_SESSION['cooperativa'] = $cooperativa;
-    $_SESSION['email'] = $usuario['email'];
+    $_SESSION['email'] = $email;
 
 }catch (PDOException $e) {
     // Manejo de errores en caso de fallo en la ejecución
