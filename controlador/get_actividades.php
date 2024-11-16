@@ -13,7 +13,7 @@ header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     try {
         $id_usuario = $_SESSION['id_usuario'];
-        $query = "SELECT nombre, lugar, cooperativa FROM actividades";
+        $query = "SELECT nombre, direccion, fecha FROM actividades";
         $state = $conexion->prepare($query);
         $state->execute();
         $result = $state->get_result();
