@@ -26,13 +26,13 @@
                     </div>
                     <div>
                         <span class="label">Dirección:</span>
-                        <input type="text" name="direccion" value='<?php echo  $cooperativa["direccion"]?>' placeholder="Introduce tu dirección">
+                        <input type="text" name="direccion" value='<?php echo !empty($cooperativa["direccion"]) ? $cooperativa["direccion"] : ""; ?>' placeholder="Introduce tu dirección">
                     </div>
                 </div>
 
                 <div class="profile-info">
                     <h3>Descripción</h3>
-                    <textarea name="descripcion" rows="4" value='wergwsrdgsrfgsfrghbsd' placeholder="Escribe una breve descripción sobre tu cooperativa"></textarea>
+                    <textarea name="descripcion" rows="4" value='<?php echo !empty($cooperativa["descripcion"]) ? $cooperativa["descripcion"] : ""; ?>' placeholder="Escribe una breve descripción sobre tu cooperativa">'<?php echo !empty($cooperativa["descripcion"]) ? $cooperativa["descripcion"] : ""; ?>'</textarea>
                 </div>
 
                 <div class="profile-footer">
