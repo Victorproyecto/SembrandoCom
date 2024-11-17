@@ -338,12 +338,10 @@ body {
 /* Main Content Styles */
 #login {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    min-height: 100vh; /* Para que ocupe toda la altura de la pantalla */
-    box-sizing: border-box;
+    height: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .background-image-container {
@@ -359,27 +357,25 @@ body {
 }
 
 .login-container {
-    background-color: #fffac7;  /* Fondo naranja */
-    padding: 30px;
-    border-radius: 15px;  /* Bordes redondeados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Sombra para el contenedor */
-    max-width: 400px;
-    width: 100%;
+    background-color: #fffac7;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
 }
 
 .logo-container-central {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 #logoCentral {
     max-width: 150px;
-    height: auto;
+    height: 150px;
+    padding: 0;
 }
 
 .message-container {
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .message {
@@ -393,8 +389,7 @@ body {
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 5px;
 }
 
 .label {
@@ -402,19 +397,6 @@ body {
     font-weight: bold;
 }
 
-.input {
-    padding: 10px;
-    border: 1px solid #8bc34a;  /* Verde primario */
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
-    width: 100%;  /* Ambos inputs tienen el mismo ancho */
-}
-
-.input:focus {
-    border-color: #ff5722;  /* Naranja (acción/link) al enfocarse */
-}
 
 .btn-login {
     padding: 12px;
