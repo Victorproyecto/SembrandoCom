@@ -14,9 +14,10 @@ var_dump($_SESSION);
 <body>
     <!-- Header cargado dinámicamente -->
     <div id="header-placeholder"></div>
+
     <main class="main-perfil-usuario">
         <!-- Sección de información del usuario -->
-        <h2>Datos Personales</h2>
+        <h2>Mis datos Personales</h2>
         <section class="seccion-usuario">
             <form action="../controlador/register.php" method="POST">
                 <div class="profile-info">
@@ -31,7 +32,7 @@ var_dump($_SESSION);
                 </div>
             </form>
         </section>
-        </div>
+ 
         <!-- Contenedor de dos columnas -->
         <div class="contenedor-dos-columnas-body">
             <!-- Sección de nuevas ofertas -->

@@ -15,41 +15,48 @@ session_start();
     <!-- Header cargado dinámicamente -->
     <div id="header-placeholder"></div>
 
-    <main>
-        <!-- Título de la sección -->
-
-        <h1>MI COOPERATIVA</h1>
+    <main class="main-perfil-cooperativa">
+        <h2>Mi cooperativa</h2>
         <section class="principal-cooperativa">
-            <div class="container">
-                <form action="../controlador/register.php" method="POST">
-                    <div class="profile-info">
-                        <h2>Datos Personales</h2>
+            <form action="../controlador/register.php" method="POST">
+                <div class="profile-info">
+                    <h3>Datos Personales</h3>
+                    <div>
                         <span class="label">Nombre:</span>
                         <input type="text" name="nombre" value='<?php echo $cooperativa["nombre"]?>' placeholder="Introduce tu nombre">
+                    </div>
+                    <div>
                         <span class="label">Dirección:</span>
                         <input type="text" name="direccion" value='<?php echo $cooperativa["direccion"]?>' placeholder="Introduce tu dirección">
                     </div>
+                </div>
 
-                    <div class="profile-info">
-                        <h2>Descripción</h2>
-                        <textarea name="descripcion" rows="4" value='<?php echo $cooperativa["descripcion"]?>' placeholder="Escribe una breve descripción sobre tu cooperativa"></textarea>
-                    </div>
-
-                    <div class="profile-footer">
-                        <button type="submit">Guardar Cambios</button>
-                    </div>
-                </form>
+                <div class="profile-info">
+                    <h3>Descripción</h3>
+                    <textarea name="descripcion" rows="4" value='<?php echo $cooperativa["descripcion"]?>' placeholder="Escribe una breve descripción sobre tu cooperativa"></textarea>
+                </div>
 
                 <div class="profile-footer">
-                    <p>Última actualización: 16 de noviembre de 2024</p>
+                    <button type="submit">Guardar Cambios</button>
+                </div>
+            </form>
+
+            <div class="profile-footer">
+                <p>Última actualización: 16 de noviembre de 2024</p>
+            </div>
+        </section>
+
+        <!-- Contenedor de dos columnas -->
+            <!-- Sección de nuevas ofertas -->
+            <!-- Accesos directos a otras áreas -->
+            <section class="accesos-areas-coop">
+                <div class="area-coop">
+                    <a href="actividades_cooperativas.php" class="btn-area-coop">Gestionar mis actividades</a>
+                    <a href="huertos_cooperativas.html" class="btn-area-coop">Gestionar mis Huertos</a>
                 </div>
             </div>
         </section>
 
-        <div class="contenedor-btns">
-            <a href="actividades_cooperativas.php" class="boton-actividades">Gestionar mis actividades</a>
-            <a href="huertos_cooperativas.html" class="boton-huertos">Gestionar mis huertos</a>
-        </div>
 
         
         <!-- Sección principal con las tareas y solicitudes
