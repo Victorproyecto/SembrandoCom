@@ -78,6 +78,10 @@ CREATE TABLE usuarios_actividad (
 
 ALTER TABLE cooperativas ADD descripcion varchar(1000) NULL;
 
+ALTER TABLE usuarios_actividad ADD CONSTRAINT fk_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+ON DELETE cascade;
+ALTER TABLE usuarios_actividad ADD CONSTRAINT fk_actividad FOREIGN KEY (id_actividad) REFERENCES actividades(id)
+ON DELETE CASCADE;
 
 
 INSERT INTO comunidades_autonomas (id, nombre) VALUES (1, 'Andalucía');
@@ -8146,11 +8150,5 @@ INSERT INTO municipios (id, id_provincia, codigo_postal, nombre) VALUES (8100, 5
 INSERT INTO municipios (id, id_provincia, codigo_postal, nombre) VALUES (8101, 50, '46621', 'Zarra');
 
 
-
-INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (1, 'Huerto 1', 'Calle Falsa 123', 1, 5);
-INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (2, 'Huerto 2', 'Calle Falsa 456', 1, 10);
-INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (3, 'Huerto 3', 'Calle Falsa 789', 1, 15);
-
-INSERT INTO cooperativas(id, nombre, direccion) VALUES (1, 'Test', 'Test');
 
 
