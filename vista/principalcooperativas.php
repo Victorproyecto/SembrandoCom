@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,8 +49,8 @@ session_start();
             <!-- Accesos directos a otras áreas -->
             <section class="accesos-areas-coop">
                 <div class="area-coop">
-                    <a href="actividades_cooperativas.php" class="btn-area-coop">Gestionar mis actividades</a>
-                    <a href="huertos_cooperativas.html" class="btn-area-coop">Gestionar mis Huertos</a>
+                    <a href="../vista/actividades_cooperativas.php" class="btn-area-coop">Gestionar mis actividades</a>
+                    <a href="../vista/huertos_cooperativas.php"  class="btn-area-coop">Gestionar mis Huertos</a>
                 </div>
             </div>
         </section>
