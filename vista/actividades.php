@@ -58,7 +58,6 @@ session_start();
             actividadDiv.setAttribute('data-id', actividad.id);
             // Crear el contenido de la actividad
             actividadDiv.innerHTML = `
-                    <div class="actividad-thumbnail"></div>
                     <div class="actividad-contenido ">
                         <h3>${actividad.nombre}</h3>
                         <p>Organizado por: Cooperativa Verde</p>
