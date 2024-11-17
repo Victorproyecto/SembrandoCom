@@ -12,9 +12,9 @@ session_start();
         </div>
     </div>
     <ul class="menu">
-    <li><a href="principalusuario.php">Mi perfil</a>
+    <li><a href="../vista/principalusuario.php">Mi perfil</a>
             <ul>
-                <li><a href="miSuscripcion.html">Mi suscripción</a></li>
+                <li><a href="../vista/miSuscripcion.html">Mi suscripción</a></li>
                 <?php if (isset($_SESSION['cooperativa']) && $_SESSION['cooperativa'] == true): ?>
                 <li><a href="../controlador/get_cooperativa.php">Mi cooperativa</a></li>
                 <?php endif; ?>
