@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,7 +24,7 @@
                 <input type="number" name="aforo" placeholder="Aforo del huerto" required>
                 
                 <!-- Campos adicionales requeridos por el script PHP -->
-                <input type="hidden" name="idCooperativa" value="1">
+                <input type="hidden" name="idCooperativa" value="<?php echo $_SESSION['cooperativa']; ?>">
 
                 <button type="submit" class="btn-crear">Crear Huerto</button>
             </form>
@@ -33,21 +36,7 @@
             <!-- Los huertos serán generados dinámicamente aquí -->
         </section>
     </main>
-
-    <!-- Modal para editar huerto -->
-    <div id="edit-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-modal" class="close">&times;</span>
-            <h2>Editar Huerto</h2>
-            <form id="form-editar-huerto">
-                <input type="hidden" id="edit-id" name="id">
-                <input type="text" id="edit-nombre" name="nombre" placeholder="Nombre del huerto" required>
-                <textarea id="edit-direccion" name="direccion" placeholder="Dirección del huerto" required></textarea>
-                <input type="number" id="edit-aforo" name="aforo" placeholder="Aforo del huerto" required>
-                <button type="submit" class="btn-guardar">Guardar Cambios</button>
-            </form>
-        </div>
-    </div>
+    
 
     <!-- Footer cargado dinámicamente -->
     <div id="footer-placeholder"></div>
@@ -59,6 +48,7 @@
     <script>
         // Función para obtener los huertos desde el controlador
         async function fetchHuertos(idCooperativa) {
+            console.log(idCooperativa);
             try {
                 const response = await fetch(`../controlador/get_huertos.php?idCooperativa=${idCooperativa}`);
                 if (!response.ok) {
@@ -88,7 +78,6 @@
                     <p><strong>Dirección:</strong> ${huerto.direccion}</p>
                     <p><strong>Municipio ID:</strong> ${huerto.idMunicipio}</p>
                     <p><strong>Aforo:</strong> ${huerto.aforo}</p>
-                    <button class="btn-editar" data-id="${huerto.id}">Editar</button>
                     <button class="btn-eliminar" data-id="${huerto.id}">Eliminar</button>
                 `;
                 container.appendChild(huertoDiv);
@@ -103,13 +92,6 @@
                 });
             });
 
-            const editButtons = document.querySelectorAll('.btn-editar');
-            editButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-                    mostrarModalEditar(id);
-                });
-            });
         }
         // Función para eliminar un huerto
         async function eliminarHuerto(id) {
@@ -132,79 +114,19 @@
 
                 const result = await response.json();
 
-                if (result.message) {
-                    alert(result.message);
-                    // Recargar los huertos para reflejar los cambios
-                    fetchHuertos(1); // Cambia por el idCooperativa correcto si es dinámico
-                } else if (result.error) {
-                    alert(result.error);
-                }
+                window.location.reload();
             } catch (error) {
                 console.error('Hubo un problema con la petición Fetch:', error);
                 alert('Hubo un problema al eliminar el huerto. Por favor, intenta nuevamente.');
             }
         }
 
-        // Mostrar modal para editar huerto
-        function mostrarModalEditar(id) {
-            // Obtener información del huerto para editar
-            const huerto = document.querySelector(`.huerto [data-id='${id}']`).parentElement;
-            document.getElementById('edit-id').value = id;
-            document.getElementById('edit-nombre').value = huerto.querySelector('h3').innerText;
-            document.getElementById('edit-direccion').value = huerto.querySelector('p:nth-of-type(1)').innerText.replace("Dirección: ", "");
-            document.getElementById('edit-aforo').value = huerto.querySelector('p:nth-of-type(3)').innerText.replace("Aforo: ", "");
 
-            // Mostrar el modal
-            const modal = document.getElementById('edit-modal');
-            modal.style.display = 'block';
-        }
 
-        // Cerrar modal
-        document.getElementById('close-modal').addEventListener('click', () => {
-            document.getElementById('edit-modal').style.display = 'none';
-        });
 
-        // Función para manejar la edición del huerto
-        document.getElementById('form-editar-huerto').addEventListener('submit', async function (event) {
-            event.preventDefault(); // Evitar recargar la página
-
-            const id = document.getElementById('edit-id').value;
-            const nombre = document.getElementById('edit-nombre').value;
-            const direccion = document.getElementById('edit-direccion').value;
-            const aforo = document.getElementById('edit-aforo').value;
-
-            try {
-                const response = await fetch('../controlador/editar_huerto.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: `id=${id}&nombre=${nombre}&direccion=${direccion}&aforo=${aforo}`
-                });
-
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-
-                const result = await response.json();
-
-                if (result.message) {
-                    alert(result.message);
-                    // Recargar los huertos para reflejar los cambios
-                    fetchHuertos(1);
-                } else if (result.error) {
-                    alert(result.error);
-                }
-            } catch (error) {
-                console.error('Hubo un problema con la petición Fetch:', error);
-                alert('Hubo un problema al editar el huerto. Por favor, intenta nuevamente.');
-            }
-
-            document.getElementById('edit-modal').style.display = 'none'; // Cerrar el modal después de guardar
-        });
 
         // Llamar a la función para obtener los huertos al cargar la página
-        const idCooperativa = 1; // Esto debe ser dinámico dependiendo de la cooperativa que esté usando la página
+        const idCooperativa = <?php echo $_SESSION['cooperativa']?>; // Esto debe ser dinámico dependiendo de la cooperativa que esté usando la página
         fetchHuertos(idCooperativa);
     </script>
 </body>

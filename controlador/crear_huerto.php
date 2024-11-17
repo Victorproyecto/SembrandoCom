@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         crearHuerto($nombre, $direccion, $idCooperativa, $aforo);
         $_SESSION['mensaje'] = 'Actividad creada exitosamente';
         // Redirige de nuevo a la página de actividades
-        header('Location: ../vista/huertos_cooperativas.html'); 
+        header('Location: ../vista/huertos_cooperativas.php');
         exit();
     }catch(PDOException $e) {
         http_response_code(500);

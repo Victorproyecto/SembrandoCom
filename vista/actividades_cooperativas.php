@@ -141,7 +141,6 @@ function displayActividades(actividades) {
             <p><strong>Fecha:</strong> ${actividad.fecha}</p>
             <p><strong>Dirección:</strong> ${actividad.direccion}</p>
             <p><strong>Premium:</strong> ${actividad.esPremium ? 'Sí' : 'No'}</p>
-            <button class="btn-editar">Editar</button>
             <button class="btn-eliminar" data-id="${actividad.id}">Eliminar</button>
         `;
         container.appendChild(actividadDiv);
