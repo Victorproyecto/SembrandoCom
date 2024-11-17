@@ -76,6 +76,9 @@ CREATE TABLE usuarios_actividad (
     FOREIGN KEY (id_actividad) REFERENCES actividades(id)
 );
 
+ALTER TABLE cooperativas ADD descripcion varchar(1000) NULL;
+
+
 
 INSERT INTO comunidades_autonomas (id, nombre) VALUES (1, 'Andalucía');
 INSERT INTO comunidades_autonomas (id, nombre) VALUES (2, 'Aragón');
