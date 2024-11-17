@@ -942,7 +942,6 @@ input[type="text"], input[type="file"], input[type="url"] {
 /* Accesos a Otras Áreas cooperativa */
 .accesos-areas-coop {
     display: flex;
-    fle
     justify-content: space-between;
     align-items: center;
     gap: 15px;

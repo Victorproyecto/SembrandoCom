@@ -42,7 +42,7 @@ session_start();
     <div id="footer-placeholder"></div>
 
     <!-- Script para cargar el header y footer -->
-    <script src="../vista/js/header_footer_coop.js"></script>
+    <script src="../vista/js/header_footer.js"></script>
 
     <!-- Script para manejar los huertos relacionados a la cooperativa -->
     <script>

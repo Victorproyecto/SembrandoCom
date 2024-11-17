@@ -146,6 +146,6 @@
     <!-- Footer cargado dinámicamente -->
     <div id="footer-placeholder"></div>
 
-    <script src="../vista/js/header_footer_coop.js"></script>
+    <script src="../vista/js/header_footer.js"></script>
 </body>
 </html>

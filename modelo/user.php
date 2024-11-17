@@ -68,7 +68,7 @@ function obtenerNombreById($id) {
     $conexion = crearConexion();
     $query = "SELECT nombre FROM usuarios WHERE id = ?";
     $state = $conexion->prepare($query);
-    $state -> bind_param('i', $id['id']);
+    $state -> bind_param('i', $id);
     $state->execute();
     $result = $state->get_result();
     return $result->fetch_assoc()['nombre'];
