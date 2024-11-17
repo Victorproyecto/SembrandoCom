@@ -13,7 +13,7 @@ session_start();
     </div>
     <ul class="menu">
         <li><a href="actividades.php">Actividades</a></li>
-        <li><a href="zonasVerdes.html">Zonas verdes</a></li>
+        <li><a href="zonasVerdes.php">Zonas verdes</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="ayuda.html">Ayuda</a></li>
         <li><a href="principalusuario.php">Mi perfil</a>

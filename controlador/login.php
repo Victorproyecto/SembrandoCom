@@ -26,8 +26,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         unset($_SESSION['error_login']);
 
         //Redirige a la pagina de perfil de usuario.
-        header("Location: ../vista/zonasVerdes.html");
-        exit();
+ // Redirigir según el tipo de usuario
+ if ($_SESSION['cooperativa'] === true || $_SESSION['cooperativa'] === 1) {
+    header("Location: ../vista/principalcooperativas.php");
+    exit();
+} else {
+    header("Location: ../vista/principalusuario.php");
+    exit();
+}
     }else{
         //Contraseña o email incorrectos
         $_SESSION['error_login'] = "El correo electrónico o la contraseña son incorrectos.";

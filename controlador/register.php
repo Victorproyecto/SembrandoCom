@@ -72,8 +72,13 @@ try {
     echo json_encode(['error' => $e->getMessage()]);
     return;
 }
+ // Redirigir según el tipo de usuario
+ if ($cooperativa == "cooperativa") {
+    header("Location: ../vista/principalcooperativas.php");
+    exit();
+} else {
+    header("Location: ../vista/principalusuario.php");
+    exit();
+}
 
-//Redirige a la pagina de perfil.
-header("Location: ../vista/zonasVerdes.html");
-exit();
 ?>
