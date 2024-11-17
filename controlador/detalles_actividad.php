@@ -1,5 +1,6 @@
 <?php
-include_once '../modelo/huerto.php';
+include_once '../modelo/actividad.php';
+include_once '../modelo/cooperativa.php';
 include_once 'funciones.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -7,7 +8,6 @@ error_reporting(E_ALL);
 
 validarSesionIniciada();
 
-header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     try {
         if(!isset($_GET["id"])){
@@ -15,12 +15,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             return;
         }
         $id = $_GET["id"];
-        $huerto = obtenerHuerto($id);
-        if(!$huerto) {
+        $actividad = obtenerActividad($id);
+        if(!$actividad) {
             http_response_code(404);
             return;
         }
-        echo json_encode($huerto);
+
+        $cooperativa = obtenerCooperativa($actividad["id_cooperativa"]);
+        if(!$cooperativa) {
+            http_response_code(404);
+            return;
+        }
+
+        include '../vista/detallesActividad.php';
     }catch(PDOException $e) {
         http_response_code(500);
         echo json_encode(['error' => $e->getMessage()]);

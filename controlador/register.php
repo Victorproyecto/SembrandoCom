@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+include_once '../modelo/user.php';
 error_reporting(E_ALL);
 
 include_once "../modelo/db_connection.php";
@@ -29,8 +30,9 @@ try {
     $query->execute();
     $lastUserId = $conexion->insert_id;
 }catch (PDOException $e) {
-    // Manejo de errores en caso de fallo en la ejecución
-    echo "Error en la inserción:1 " . $e->getMessage();
+    http_response_code(500);
+    echo json_encode(['error' => $e->getMessage()]);
+    return;
 }
 if($cooperativa)
     try {
@@ -50,8 +52,9 @@ if($cooperativa)
 
 
     }catch (PDOException $e) {
-        // Manejo de errores en caso de fallo en la ejecución
-        echo "Error en la inserción:1 " . $e->getMessage();
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()]);
+        return;
     }
 
 //Una vez registrado mantener la sesión iniciada.
@@ -59,27 +62,15 @@ try {
     session_start();
     $id_usuario = $conexion->insert_id;
     $_SESSION['id_usuario'] = $id_usuario;
-    $_SESSION['nombre_usuario'] = $nombre;
+    $_SESSION['nombre'] = $nombre;
     $_SESSION['cooperativa'] = $cooperativa;
-    $_SESSION['email'] = $usuario['email'];
+    $_SESSION['email'] = $email;
 
 }catch (PDOException $e) {
     // Manejo de errores en caso de fallo en la ejecución
-    echo "Error en iniciar session php: " . $e->getMessage();
-}
- //Obtener el id del arbol creado para la tabla miembros
-    $id_arbol = $conexion->insert_id;
-    //Registrar el usuario como primer miembro de su arbol
-try {
-}catch (PDOException $e) {
-    // Manejo de errores en caso de fallo en la ejecución
-    echo "Error en la inserción3: " . $e->getMessage();
-}
-
-try {
-}catch (PDOException $e) {
-    // Manejo de errores en caso de fallo en la ejecución
-    echo "Error en la inserción3: " . $e->getMessage();
+    http_response_code(500);
+    echo json_encode(['error' => $e->getMessage()]);
+    return;
 }
 
 //Redirige a la pagina de perfil.

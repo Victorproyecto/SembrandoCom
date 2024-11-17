@@ -705,7 +705,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     margin-top: 5px;
     width: 100%;
 }
-/*MIS ACTIVIDADES*/
+/* ACTIVIDADES*/
 /* Sección donde los usuarios visualizan las actividades en las que se pueden inscribir */
 /* Filtros de Actividades */
 .filtros-actividades {
@@ -745,8 +745,7 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 .actividad {
     display: flex;
-    background-color: #A9401D;
-    color: white;
+    color: #8bc34a;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
@@ -784,6 +783,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .actividad .tipo-actividad.gratuita {
@@ -802,33 +802,28 @@ input[type="text"], input[type="file"], input[type="url"] {
     font-size: 14px;
 }
 
-.btn-detalles {
-    background-color: #ff5722;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Estilo del botón Inscribirme en la página de actividades */
+.btn-inscribirme {
+    background-color: #ff5722; /* Fondo naranja */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interior */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo mano */
+    margin-top: 10px; /* Espacio superior */
+    display: block; /* Asegura que el botón esté en su propia línea */
+    text-align: center; /* Centrar texto */
+    font-family: 'Poppins', sans-serif; /* Fuente acorde a la guía de estilo */
+    font-size: 16px; /* Tamaño de fuente */
 }
 
-.btn-detalles:hover {
-    background-color: #8bc34a;
+.btn-inscribirme:hover {
+    background-color: #e64a19; /* Color más oscuro al pasar el cursor */
 }
 
-/* Botón para Cargar Más Actividades */
-.btn-cargar-mas {
-    display: block;
-    background-color: #ff5722;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    margin: 20px auto;
-    cursor: pointer;
-    width: 200px;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
+/* Asegurar que el contenedor del tipo de actividad y botón se alinee bien */
+.tipo-actividad {
+    margin-bottom: 10px; /* Añadir espacio inferior para separar del botón */
 }
 
 .btn-cargar-mas:hover {
@@ -914,15 +909,10 @@ input[type="text"], input[type="file"], input[type="url"] {
     transition: background-color 0.3s;
 }
 
-.btn-inscripcion:hover {
-    background-color: #e64a19;
-}
+
 
 
 /* PAGINA PRINCIPAL DE COOPERATIVAS */
-
-
-
 /* Mis Tareas */
 .mis-tareas, .nueva-tarea, .mi-calendario, .solicitudes, .nuevo-mensaje, .gestion-voluntarios {
     background-color: #fff;
@@ -1109,7 +1099,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     height: 200px; 
 }
 
-/*Botones enlaces páginas actividadez y huertos*/
+/*Botones enlaces páginas actividades y huertos*/
 .contenedor-btns {
     display: flex; /* Activa Flexbox */
     justify-content: center; /* Centra horizontalmente */

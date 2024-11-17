@@ -1,6 +1,6 @@
 // Cargar el header
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../vista/header.html')
+    fetch('../vista/header.php')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;

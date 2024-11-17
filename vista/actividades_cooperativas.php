@@ -23,6 +23,9 @@
                 <label for="direccion-huerto">Selecciona el Huerto:</label>
                 <select id="direccion-huerto" name="direccion" required>
                     <option value="">Seleccione un huerto</option>
+                    <?php foreach($huertos as $huerto){?>
+                        <option value='<?php echo $huerto["id"]?>'><?php echo $huerto["nombre"]?></option>
+                    <?php }?>
                 </select>
 
                 <input type="date" name="fecha" required>
@@ -117,26 +120,74 @@
             }
         }
 
-        // Función para mostrar las actividades en la sección "Mis Actividades"
-        function displayActividades(actividades) {
-            const container = document.getElementById('actividades-container');
-            container.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevas actividades
 
-            actividades.forEach(actividad => {
-                const actividadDiv = document.createElement('div');
-                actividadDiv.classList.add('actividad');
-                actividadDiv.innerHTML = `
-                    <h3>${actividad.nombre}</h3>
-                    <p><strong>Descripción:</strong> ${actividad.descripcion}</p>
-                    <p><strong>Fecha:</strong> ${actividad.fecha}</p>
-                    <p><strong>Dirección:</strong> ${actividad.direccion}</p>
-                    <p><strong>Premium:</strong> ${actividad.esPremium ? 'Sí' : 'No'}</p>
-                    <button class="btn-editar">Editar</button>
-                    <button class="btn-eliminar">Eliminar</button>
-                `;
-                container.appendChild(actividadDiv);
-            });
+// Función para mostrar las actividades en la sección "Mis Actividades"
+function displayActividades(actividades) {
+    const container = document.getElementById('actividades-container');
+    container.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevas actividades
+
+    actividades.forEach(actividad => {
+        
+        const actividadDiv = document.createElement('div');
+        actividadDiv.classList.add('actividad');
+        actividadDiv.innerHTML = `
+            <h3>${actividad.nombre}</h3>
+            <p><strong>Descripción:</strong> ${actividad.descripcion}</p>
+            <p><strong>Fecha:</strong> ${actividad.fecha}</p>
+            <p><strong>Dirección:</strong> ${actividad.direccion}</p>
+            <p><strong>Premium:</strong> ${actividad.esPremium ? 'Sí' : 'No'}</p>
+            <button class="btn-editar">Editar</button>
+            <button class="btn-eliminar" data-id="${actividad.id}">Eliminar</button>
+        `;
+        container.appendChild(actividadDiv);
+    });
+
+    // Añadir event listeners a los botones de eliminar después de agregar todas las actividades
+    const deleteButtons = document.querySelectorAll('.btn-eliminar');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const idActividad = this.getAttribute('data-id');
+            console.log("ID de Actividad a Eliminar:", idActividad); // Log para verificar el ID
+            eliminarActividad(idActividad);
+        });
+    });
+}
+
+// Función para eliminar una actividad
+async function eliminarActividad(id) {
+    if (!confirm("¿Estás seguro de que deseas eliminar esta actividad?")) {
+        return; // Si el usuario cancela, no se ejecuta la eliminación
+    }
+
+    try {
+        console.log("Eliminando actividad con ID:", id); // Log para depurar
+
+        const response = await fetch('../controlador/eliminar_actividad.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `id=${id}`
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
+
+        const result = await response.json();
+
+        if (result.message) {
+            alert(result.message);
+            // Recargar las actividades para reflejar los cambios
+            fetchActividades(3); // Cambia por el idCooperativa correcto
+        } else if (result.error) {
+            alert(result.error);
+        }
+    } catch (error) {
+        console.error('Hubo un problema con la petición Fetch:', error);
+        alert('Hubo un problema al eliminar la actividad. Por favor, intenta nuevamente.');
+    }
+}
 
         // Llamar a las funciones para obtener los huertos y las actividades al cargar la página
         // Aquí debes usar el id de la cooperativa actual. Podrías obtenerlo de la sesión o de alguna otra forma

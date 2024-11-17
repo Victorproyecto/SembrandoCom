@@ -7,11 +7,12 @@ error_reporting(E_ALL);
 
 validarSesionIniciada();
 
-header('Content-Type: application/json');
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $idCooperativa = 1;
     try {
-        $huertos = obtenerHuertos();
-        echo json_encode($huertos);
+        $huertos = obtenerHuertosPorCooperativa($idCooperativa);
+        include '../vista/actividades_cooperativas.php';
     }catch(PDOException $e) {
         http_response_code(500);
         echo json_encode(['error' => $e->getMessage()]);

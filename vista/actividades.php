@@ -64,6 +64,7 @@ session_start();
                         <p>Organizado por: Cooperativa Verde</p>
                         <p><span>Fecha: 12/12/2023</span> | <span>Ubicación: ${actividad.direccion}</span></p>
                         <div class="tipo-actividad gratuita">Gratuita</div>
+                        <button class="btn-inscripcion" onclick="window.location.href='../controlador/detalles_actividad.php?id=${actividad.id}'">Inscribirme</button>
                     </div>
                 `;
 
@@ -73,5 +74,5 @@ session_start();
     }
 
     // Llamar a la función para obtener actividades al cargar la página
-    fetchActividades();
+    fetchActividades(); 
 </script>

@@ -64,4 +64,29 @@ function obtenerIdByEmail($email) {
     return $result->fetch_assoc();
 }
 
+function obtenerNombreById($id) {
+    $conexion = crearConexion();
+    $query = "SELECT nombre FROM usuarios WHERE id = ?";
+    $state = $conexion->prepare($query);
+    $state -> bind_param('i', $id['id']);
+    $state->execute();
+    $result = $state->get_result();
+    return $result->fetch_assoc()['nombre'];
+}
+
+function esCooperativa($id) {
+    $conexion = crearConexion();
+    $sql = "SELECT COUNT(*) FROM cooperativas WHERE id_usuario = ?";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bind_param('i', $id['id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_row();  // fetch_row() devuelve un array numerado
+    if ($row[0] > 0) {
+        return true;  // Se encontraron registros
+    } else {
+        return false; // No se encontraron registros
+    }  // Verificar si el usuario existe
+}
+
 ?>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+var_dump($_SESSION);
 ?>
 <html lang="es">
 <head>
@@ -24,7 +25,7 @@ session_start();
                     <ul>
                         <li>
                             <span class="label">Nombre:</span>
-                            <input type="text" name="nombre" value="<?php echo $_SESSION['nombre_usuario']; ?>" placeholder="Introduce tu nombre">
+                            <input type="text" name="nombre" value="<?php echo $_SESSION['nombre']; ?>" placeholder="Introduce tu nombre">
                         </li>
                         <li>
                             <span class="label">email:</span>
