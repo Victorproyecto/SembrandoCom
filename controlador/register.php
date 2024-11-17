@@ -60,10 +60,10 @@ if($cooperativa)
 //Una vez registrado mantener la sesión iniciada.
 try {
     session_start();
-    $id_usuario = $conexion->insert_id;
+    $id_usuario = $lastUserId;
     $_SESSION['id_usuario'] = $id_usuario;
     $_SESSION['nombre'] = $nombre;
-    $_SESSION['cooperativa'] = esCooperativa($_SESSION['id_usuario']);
+    $_SESSION['cooperativa'] = esCooperativa($id_usuario);
     $_SESSION['email'] = $email;
 
 

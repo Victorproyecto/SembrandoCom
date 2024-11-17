@@ -75,10 +75,11 @@ function obtenerNombreById($id) {
 }
 
 function esCooperativa($id) {
+
     $conexion = crearConexion();
     $sql = "SELECT id FROM cooperativas WHERE id_usuario = ?";
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param('i', $id['id']);
+    $stmt->bind_param('i', $id);
     $stmt->execute();
     $result = $stmt->get_result();
     return $result->fetch_assoc()['id'];// fetch_row() devuelve un array numerado

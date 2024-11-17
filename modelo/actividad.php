@@ -44,7 +44,6 @@ function usuariosInscritosEnActividad($idActividad) {
     if ($result->num_rows > 0) {
         $count = $result->fetch_row()[0];
     }
-    var_dump($count); die();
     return $count;
 }
 

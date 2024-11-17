@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             return;
         }
 // cuando un usuario ya esta inscrito , lanzar un mensaje de ya inscrito
-        
+
 
         //Incluimos el usuario en la actividad
         incluirUsuarioEnActividad($idUsuario, $idActividad);

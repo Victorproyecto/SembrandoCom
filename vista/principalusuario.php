@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-var_dump($_SESSION);
 ?>
 <html lang="es">
 <head>

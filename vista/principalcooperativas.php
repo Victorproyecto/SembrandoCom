@@ -1,4 +1,5 @@
-
+<?php
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,22 +17,22 @@
     <main class="main-perfil-cooperativa">
         <h2>Mi cooperativa</h2>
         <section class="principal-cooperativa">
-            <form action="../controlador/register.php" method="POST">
+            <form action="../controlador/get_cooperativa.php" method="POST">
                 <div class="profile-info">
                     <h3>Datos Personales</h3>
                     <div>
                         <span class="label">Nombre:</span>
-                        <input type="text" name="nombre" value='<?php echo $cooperativa["nombre"]?>' placeholder="Introduce tu nombre">
+                        <input type="text" name="nombre" value='<?php echo !empty($cooperativa["nombre"]) ? $cooperativa["nombre"] : ""; ?>' placeholder="Introduce tu nombre">
                     </div>
                     <div>
                         <span class="label">Dirección:</span>
-                        <input type="text" name="direccion" value='<?php echo $cooperativa["direccion"]?>' placeholder="Introduce tu dirección">
+                        <input type="text" name="direccion" value='<?php echo  $cooperativa["direccion"]?>' placeholder="Introduce tu dirección">
                     </div>
                 </div>
 
                 <div class="profile-info">
                     <h3>Descripción</h3>
-                    <textarea name="descripcion" rows="4" value='<?php echo $cooperativa["descripcion"]?>' placeholder="Escribe una breve descripción sobre tu cooperativa"></textarea>
+                    <textarea name="descripcion" rows="4" value='wergwsrdgsrfgsfrghbsd' placeholder="Escribe una breve descripción sobre tu cooperativa"></textarea>
                 </div>
 
                 <div class="profile-footer">
