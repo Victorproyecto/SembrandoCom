@@ -24,7 +24,7 @@ function obtenerCooperativa($id){
         // Preparar la consulta
         $state = $conexion->prepare($query);
         // Vincular los parámetros a la consulta preparada
-        $state->bind_param('sssi', $nombre, $direccion, $descripcion, $id_usuario['id']); // 'sss' indica que son tres parámetros de tipo string
+        $state->bind_param('sssi', $nombre, $direccion, $descripcion, $id_usuario); // 'sss' indica que son tres parámetros de tipo string
         // Ejecutar la consulta
         $resultado = $state->execute();
         // Verificar si la inserción fue exitosa
