@@ -17,8 +17,13 @@ session_start();
 
     <main>
         <!-- Título de la sección -->
-        <section class="seccion-eventos">
-            <h1>ZONAS VERDES</h1>
+        
+        <section class="seccion-huertos">
+        <h2>Zonas verdes</h2>
+            <!-- Lista de huertos -->
+            <div id="lista-huertos">
+            </div>
+
             <!-- Buscador y Filtro 
             <div class="buscador-filtro">
                 <input type="text" class="buscador" placeholder="Buscador">
@@ -27,19 +32,17 @@ session_start();
                     <option value="fecha">Fecha</option>
                 </select>
             </div>-->
-
-            <!-- Lista de Eventos -->
-            <div id="lista-eventos">
-            </div>
         </section>
     </main>
 
     <!-- Footer cargado dinámicamente -->
     <div id="footer-placeholder"></div>
 
-    <script src="../vista/js/header_footer.js"></script>
 </body>
 </html>
+
+<script src="../vista/js/header_footer.js"></script>
+
 <script>
 // Función para obtener huertos desde el controlador
 async function fetchHuertosPublicados() {
@@ -57,7 +60,7 @@ async function fetchHuertosPublicados() {
 
 // Función para mostrar los huertos en el contenedor de huertos
 function displayHuertosPublicados(huertos) {
-    const contenedorHuertos = document.getElementById('lista-eventos');
+    const contenedorHuertos = document.getElementById('lista-huertos');
     contenedorHuertos.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos elementos
 
     // Recorrer todos los huertos y agregarlos al contenedor

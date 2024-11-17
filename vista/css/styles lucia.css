@@ -496,13 +496,13 @@ input[type="text"], input[type="file"], input[type="url"] {
 }
 
 
-/*EVENTOS EN LOS QUE PARTICIPA EL USUARIOS, pertenece a html eventosusuarios*/
-.seccion-eventos {
+/*ZONAS VERDES*/
+.seccion-huertos {
     padding: 20px;
-    background-color: #F9FBE7;
+
 }
 
-.seccion-eventos h1 {
+.seccion-huertos h2 {
     font-family: 'Poppins', sans-serif;
     color: #212121;
     text-align: center;
@@ -510,45 +510,50 @@ input[type="text"], input[type="file"], input[type="url"] {
     margin-bottom: 20px;
 }
 
-.buscador-filtro {
+#lista-huertos {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #A9401D;
+    border-radius: 10px;
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
 }
 
-.buscador {
-    width: 70%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
 
-.lista-eventos {
-    display: flex;
-    justify-content: space-between;
-}
-
-.evento {
-    width: 30%;
+.huerto {
+    width: 500px;
     background-color: #8bc34a;
     padding: 15px;
     border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+}
+
+.huerto:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.huerto h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #212121;
+    margin-bottom: 10px;
     text-align: center;
 }
 
-.evento img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.evento h3 {
-    font-family: 'Poppins', sans-serif;
+.huerto p {
+    font-size: 14px;
     color: #212121;
+    margin: 5px 0;
 }
 
-.evento .preview-evento {
+.huerto .preview-huerto {
     font-size: 14px;
     color: #212121;
     margin: 10px 0;
@@ -569,18 +574,21 @@ input[type="text"], input[type="file"], input[type="url"] {
     background-color: #ff5722;
 }
 
-.btn-mostrar-mas {
-    background-color: #ff5722;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto;
+.buscador-filtro {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-/* Sección de Mi Calendario y Mis Eventos */
+.buscador {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+/* Sección de Mi Calendario
 .seccion-calendario {
     display: flex;
     justify-content: space-around;
@@ -629,7 +637,8 @@ input[type="text"], input[type="file"], input[type="url"] {
     border-radius: 5px;
     margin-top: 5px;
     width: 100%;
-}
+}*/
+
 /* ACTIVIDADES*/
 /* Sección donde los usuarios visualizan las actividades en las que se pueden inscribir */
 /* Filtros de Actividades */
