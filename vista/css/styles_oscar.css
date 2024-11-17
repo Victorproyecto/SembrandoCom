@@ -485,6 +485,11 @@ footer {
     background-color: #F9FBE7;
 }
 
+.mi-suscripcion h3{
+    color: #A9401D;
+}
+
+
 /* Sección Detalles suscripción */
 .detalles-suscripcion {
     padding: 20px;
@@ -510,10 +515,10 @@ footer {
     margin-bottom: 20px;
 }
 
-
 label {
     display: block;
     margin-top: 20px;
+    width: 200px;
 }
 
 input[type="text"], input[type="email"], select {
@@ -525,6 +530,14 @@ input[type="text"], input[type="email"], select {
     width: 40%;
 }
 
+select {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+}
 
 .formulario-pago {
     margin-top: 20px;
