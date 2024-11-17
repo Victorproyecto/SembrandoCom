@@ -22,14 +22,14 @@
                     <div class="profile-info">
                         <h2>Datos Personales</h2>
                         <span class="label">Nombre:</span>
-                        <input type="text" name="nombre" value="Juan" placeholder="Introduce tu nombre">
+                        <input type="text" name="nombre" value='<?php echo $cooperativa["nombre"]?>' placeholder="Introduce tu nombre">
                         <span class="label">Dirección:</span>
-                        <input type="text" name="direccion" value="Calle Tal, Madrid, España" placeholder="Introduce tu dirección">
+                        <input type="text" name="direccion" value='<?php echo $cooperativa["direccion"]?>' placeholder="Introduce tu dirección">
                     </div>
 
                     <div class="profile-info">
                         <h2>Descripción</h2>
-                        <textarea name="descripcion" rows="4" placeholder="Escribe una breve descripción sobre tu cooperativa"></textarea>
+                        <textarea name="descripcion" rows="4" value='<?php echo $cooperativa["descripcion"]?>' placeholder="Escribe una breve descripción sobre tu cooperativa"></textarea>
                     </div>
 
                     <div class="profile-footer">
