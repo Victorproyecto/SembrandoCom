@@ -38,8 +38,13 @@
                     }
                 ?>
             </div>
-            
-            <button class="btn-inscripcion">Inscribirse</button>
+            <form action="../controlador/inscribir_en_actividad.php" method="POST" id="formInscripcion">
+                <input type="hidden" name="id_actividad" value="<?php echo $id; ?>"> <!-- Si necesitas pasar el ID de actividad -->
+                <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario']['id']; ?>"> <!-- ID del usuario -->
+
+                <!-- Botón de inscripción -->
+                <button class="btn-inscripcion" type="submit">Inscribirse</button>
+            </form>
         </section>
     </main>
 
@@ -47,5 +52,7 @@
     <div id="footer-placeholder"></div>
 
     <script src="../vista/js/header_footer.js"></script>
+
 </body>
 </html>
+
