@@ -25,13 +25,21 @@
                     </div>
                     <div>
                         <span class="label">Dirección:</span>
+<<<<<<< HEAD
                         <input type="text" name="direccion" value='<?php echo $cooperativa["direccion"]?>' placeholder="Introduce tu dirección">
+=======
+                        <input type="text" name="direccion" value='<?php echo !empty($cooperativa["direccion"]) ? $cooperativa["direccion"] : ""; ?>' placeholder="Introduce tu dirección">
+>>>>>>> b485255063d661528bcc42bfca2fb7c6e82ebf00
                     </div>
                 </div>
 
                 <div class="profile-info">
                     <h3>Descripción</h3>
+<<<<<<< HEAD
                     <textarea name="descripcion" rows="4" value='<?php echo $cooperativa["descripcion"]?>' placeholder="Escribe una breve descripción sobre tu cooperativa"></textarea>
+=======
+                    <textarea name="descripcion" rows="4" value='<?php echo !empty($cooperativa["descripcion"]) ? $cooperativa["descripcion"] : ""; ?>' placeholder="Escribe una breve descripción sobre tu cooperativa">'<?php echo !empty($cooperativa["descripcion"]) ? $cooperativa["descripcion"] : ""; ?>'</textarea>
+>>>>>>> b485255063d661528bcc42bfca2fb7c6e82ebf00
                 </div>
 
                 <div class="profile-footer">
