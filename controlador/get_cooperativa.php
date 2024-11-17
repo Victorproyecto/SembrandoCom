@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Recoger los datos del formulario (POST)
+
     if (isset($_POST['nombre']) && isset($_POST['direccion']) && isset($_POST['descripcion'])) {
         $nombre = $_POST['nombre'];
         $direccion = $_POST['direccion'];
