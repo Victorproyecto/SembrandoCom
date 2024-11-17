@@ -31,8 +31,6 @@ session_start();
             <!-- Lista de Eventos -->
             <div id="lista-eventos">
             </div>
-            <!-- Botón para cargar más eventos -->
-            <button class="btn-mostrar-mas">Mostrar más</button>
         </section>
     </main>
 
@@ -73,7 +71,6 @@ function displayHuertosPublicados(huertos) {
             <p><strong>Dirección:</strong> ${huerto.direccion}</p>
             <p><strong>Cooperativa:</strong> ${huerto.nombreCooperativa}</p>
             <p>${huerto.descripcion}</p>
-            <button class="btn-detalles" onclick="window.location.href='../controlador/get_huerto.php?id=${huerto.id}'">Ver Detalles</button>
         `;
 
         // Añadir el div del huerto al contenedor principal
