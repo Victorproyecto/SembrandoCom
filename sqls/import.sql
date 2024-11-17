@@ -8151,6 +8151,6 @@ INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (1, 'Hue
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (2, 'Huerto 2', 'Calle Falsa 456', 1, 10);
 INSERT INTO huertos (id, nombre, direccion, id_municipio, aforo) VALUES (3, 'Huerto 3', 'Calle Falsa 789', 1, 15);
 
-INSERT INTO cooperativas(id, nombre, direccion, id_municipio) VALUES (1, 'Test', 'Test', 1);
+INSERT INTO cooperativas(id, nombre, direccion) VALUES (1, 'Test', 'Test');
 
 
