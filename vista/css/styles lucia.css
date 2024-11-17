@@ -451,6 +451,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     background-color: #8bc34a;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
+    color: #212121;
     font-size: 20px;
     text-align: center;
     padding: 30px;
