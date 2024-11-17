@@ -367,11 +367,11 @@ input[type="text"], input[type="file"], input[type="url"] {
 /* PAGINA PRINCIPAL USUARIOS */
 /* Contenedor Principal */
 .main-perfil-usuario {
-    width: 90%;
-    max-width: 1200px;
+    width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #F9FBE7;
+    text-align: center;
 }
 
 /* Sección Usuario */
@@ -380,165 +380,90 @@ input[type="text"], input[type="file"], input[type="url"] {
     justify-content: space-between;
     gap: 20px;
 }
+
 .seccion-usuario {
     background-color: #A9401D;
     color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    margin-left: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
-.usuario-header {
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reducir espacio entre filas */
+    align-items: flex-start;
+}
+
+.profile-info div {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 15px;
-    background-color: #A9401D;
+    width: 100%;
 }
 
-.usuario-header img {
-    width: 60px;
-    height: 60px;
-
-    margin-right: 15px;
-}
-
-.usuario-header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 28px;
-}
-
-.usuario-info {
-    text-align: center;
-}
-
-.usuario-info .foto-perfil {
+.profile-info .label {
+    font-weight: bold;
+    text-align: left;
     width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    color: white !important;
+    display: inline-block;
 }
 
-/* Botones de Usuario */
-.usuario-opciones {
-    display: flex;
-    flex-wrap: wrap; /* Permitir que los elementos pasen a la siguiente línea */
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-opcion {
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    padding: 10px;
+.profile-info input[type="text"] {
+    border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: pointer;
-    width: calc(50% - 5px); /* Cada botón ocupa la mitad menos un poco de espacio para el gap */
+    font-size: 14px;
+    background-color: #fff;
+    padding: 5px 10px;
+    width: 100%;
     box-sizing: border-box;
 }
 
-.btn-opcion:hover {
-    background-color: #e64a19;
-}
 
 
 /* Contenedor de Dos Columnas */
 .contenedor-dos-columnas-body {
+    justify-content: center;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     gap: 20px;
+    width: 500px;
+    margin: auto;
+    box-sizing: border-box;
 }
 
-/* Sección de Nuevas Ofertas */
-.nuevas-ofertas {
-    width: 50%; /* Ocupa la mitad del contenedor principal */
-    padding: 20px;
-    background-color: #F9FBE7;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nuevas-ofertas h2 {
-    font-family: 'Poppins', sans-serif;
-    color: #212121;
-    margin-bottom: 15px;
-}
-
-.oferta {
-    display: flex;
-    background-color: #A9401D;
-    color: white;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.oferta img {
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
-}
-
-.detalles-oferta h3 {
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 5px;
-}
-
-.btn-cargar-mas {
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto;
-}
-
-.btn-cargar-mas:hover {
-    background-color: #e64a19;
-}
 
 /* Accesos a Otras Áreas */
 .accesos-areas {
-    width: 45%; /* Ocupa la mitad del contenedor principal, menos espacio para el gap */
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: #F9FBE7;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
 }
 
-.area {
+.btn-area {
     background-color: #8bc34a;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #212121;
+    font-size: 20px;
     text-align: center;
     padding: 30px;
     border-radius: 10px;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.btn-area:hover {
+    background-color: #ff5722;
+    color: white;
 
-.area a {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    color: #212121;
-    text-decoration: none;
 }
 
-.area a:hover {
-    color: #ff5722;
-}
 
 /* Sección de Newsletter */
 .newsletter-section {
