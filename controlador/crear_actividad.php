@@ -24,19 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         //SI no me viene un parametro declarado como NOT NULL en la BBDD, devuelvo un error
-        if(!$nombre || !$direccion || !$fecha || !verificarCooperativa($idCooperativa) || !$idHuerto || !$aforo) {
-            http_response_code(400);
-            return;
-        }
-     
-
         $huerto = obtenerHuerto($idHuerto);
-
         if(!$huerto) {
             http_response_code(404);
             return;
         }
-
         if($aforo > $huerto["aforo"]){
             http_response_code(400);
             return;
@@ -44,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //Insertamos la actividad
         crearActividad($nombre, $descripcion, $direccion, $idMunicipio, $idCooperativa, $idHuerto, $fecha, $esPremium, $aforo);
-        $_SESSION['mensaje'] = 'Actividad creada exitosamente';
+       // $_SESSION['mensaje'] = 'Actividad creada exitosamente';
        // Redirige de nuevo a la página de actividades
-       header('Location: ../vista/actividades_cooperativas.html'); 
+       header('Location: ../vista/actividades_cooperativas.php');
        exit();
     }catch(PDOException $e) {
         http_response_code(500);

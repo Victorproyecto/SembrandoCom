@@ -76,17 +76,13 @@ function obtenerNombreById($id) {
 
 function esCooperativa($id) {
     $conexion = crearConexion();
-    $sql = "SELECT COUNT(*) FROM cooperativas WHERE id_usuario = ?";
+    $sql = "SELECT id FROM cooperativas WHERE id_usuario = ?";
     $stmt = $conexion->prepare($sql);
     $stmt->bind_param('i', $id['id']);
     $stmt->execute();
     $result = $stmt->get_result();
-    $row = $result->fetch_row();  // fetch_row() devuelve un array numerado
-    if ($row[0] > 0) {
-        return true;  // Se encontraron registros
-    } else {
-        return false; // No se encontraron registros
-    }  // Verificar si el usuario existe
+    return $result->fetch_assoc()['id'];// fetch_row() devuelve un array numerado
+  // Verificar si el usuario existe
 }
 
 ?>

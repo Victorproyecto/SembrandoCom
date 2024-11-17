@@ -10,7 +10,13 @@ validarSesionIniciada();
 header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     try {
-        $huertos = obtenerHuertos();
+        if (isset($_GET['idCooperativa'])) {
+            $idCooperativa = $_GET['idCooperativa'];
+            $huertos = obtenerHuertosByCooperativa($idCooperativa);
+
+        }else{
+            $huertos = obtenerHuertos();
+        }
         echo json_encode($huertos);
     }catch(PDOException $e) {
         http_response_code(500);

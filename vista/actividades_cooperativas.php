@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -37,7 +41,7 @@
 
                 <!-- Campos adicionales requeridos por el script PHP -->
                 <input type="hidden" name="idMunicipio" value="1"> <!-- Esto debería ser dinámico -->
-                <input type="hidden" name="idCooperativa" value="3"> <!-- Debes colocar aquí el valor correcto del idCooperativa, posiblemente extraído de la sesión del usuario -->
+                <input type="hidden" name="idCooperativa" value="<?php echo $_SESSION['cooperativa']; ?>"> <!-- Debes colocar aquí el valor correcto del idCooperativa, posiblemente extraído de la sesión del usuario -->
                 <input type="hidden" id="idHuerto" name="idHuerto" value=""> <!-- Actualizado dinámicamente según el huerto seleccionado -->
 
                 <button type="submit" class="btn-crear">Crear Actividad</button>
@@ -109,6 +113,7 @@
         // Función para obtener las actividades desde el controlador
         async function fetchActividades(idCooperativa) {
             try {
+                console.log("uu");
                 const response = await fetch(`../controlador/get_actividades.php?idCooperativa=${idCooperativa}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -169,7 +174,7 @@ async function eliminarActividad(id) {
             },
             body: `id=${id}`
         });
-
+/*
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -183,6 +188,8 @@ async function eliminarActividad(id) {
         } else if (result.error) {
             alert(result.error);
         }
+        */
+        window.location.reload();
     } catch (error) {
         console.error('Hubo un problema con la petición Fetch:', error);
         alert('Hubo un problema al eliminar la actividad. Por favor, intenta nuevamente.');
@@ -191,12 +198,16 @@ async function eliminarActividad(id) {
 
         // Llamar a las funciones para obtener los huertos y las actividades al cargar la página
         // Aquí debes usar el id de la cooperativa actual. Podrías obtenerlo de la sesión o de alguna otra forma
-        const idCooperativa = 1; // Esto debe ser dinámico dependiendo de la cooperativa que esté usando la página
+
+
+        const idCooperativa = <?php echo $_SESSION['cooperativa']?>;
         fetchHuertos(idCooperativa);
         fetchActividades(idCooperativa);
 
         // Llamar a la función para actualizar idHuerto al cargar la página
         updateIdHuerto();
+
+
     </script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,7 +47,7 @@
         </section>
 
         <div class="contenedor-btns">
-            <a href="actividades_cooperativas.html" class="boton-actividades">Gestionar mis actividades</a>
+            <a href="actividades_cooperativas.php" class="boton-actividades">Gestionar mis actividades</a>
             <a href="huertos_cooperativas.html" class="boton-huertos">Gestionar mis huertos</a>
         </div>
 

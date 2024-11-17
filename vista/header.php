@@ -20,7 +20,7 @@ session_start();
             <ul>
                 <li><a href="miSuscripcion.html">Mi suscripción</a></li>
                 <?php if (isset($_SESSION['cooperativa']) && $_SESSION['cooperativa'] == true): ?>
-                <li><a href="principalcooperativas.html">Mi cooperativa</a></li>
+                <li><a href="principalcooperativas.php">Mi cooperativa</a></li>
                 <?php endif; ?>
                 <li><a href="../controlador/logout.php">Logout</a></li>
             </ul>

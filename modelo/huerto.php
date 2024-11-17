@@ -39,6 +39,23 @@ function crearHuerto($nombre, $direccion, $idCooperativa, $aforo){
     return $state->execute();
 }
 
+function obtenerHuertosbyCooperativa($idCooperativa){
+    $conexion = crearConexion();
+    $query = "SELECT * FROM huertos WHERE id_cooperativa = ?";
+    $state = $conexion->prepare($query);
+    $state -> bind_param('i', $idCooperativa);
+    $state->execute();
+    $result = $state->get_result();
+    $data = array();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            array_push($data, $row);
+        }
+    }
+    return $data;
+}
+
+
 function obtenerHuertosPorCooperativa($idCooperativa){
     $conexion = crearConexion();
     $query = "SELECT * FROM huertos WHERE id_cooperativa = ?";

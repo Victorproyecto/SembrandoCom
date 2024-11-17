@@ -11,30 +11,17 @@ $conexion = crearConexion();
 session_start();
 
 try {
-    // Conexión a la base de datos
-    $pdo = new PDO("mysql:host=localhost;dbname=nombre_base_datos", "usuario", "contraseña");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
         $id = $_POST['id'];
-
         // Eliminar la actividad con el ID recibido
-        $sql = "DELETE FROM actividades WHERE id = :id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-
-        if ($stmt->execute()) {
-            echo json_encode(['message' => 'Actividad eliminada con éxito']);
-        } else {
-            http_response_code(500);
-            echo json_encode(['error' => 'No se pudo eliminar la actividad']);
-        }
-    } else {
-        http_response_code(400);
-        echo json_encode(['error' => 'Método no permitido o parámetro ID faltante']);
+        $sql = "DELETE FROM actividades WHERE id = ?";
+        $query = $conexion->prepare($sql);
+        $query->bind_param('i', $id);
+        $query->execute();
     }
+
 } catch (PDOException $e) {
-    http_response_code(500);
-    echo json_encode(['error' => $e->getMessage()]);
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()]);
 }
 ?>
