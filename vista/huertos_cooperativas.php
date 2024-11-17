@@ -8,6 +8,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huertos Cooperativas - Sembrando Comunidad</title>
     <link rel="stylesheet" href="../vista/css/styles lucia.css">
+    <link rel="stylesheet" href="../vista/css/styles header-footer.css">
+    
+
 </head>
 <body>
 
