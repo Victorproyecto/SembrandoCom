@@ -15,25 +15,20 @@ var_dump($_SESSION);
     <!-- Header cargado dinámicamente -->
     <div id="header-placeholder"></div>
     <main class="main-perfil-usuario">
-        <!-- Contenedor de dos columnas -->
-        <div class="contenedor-dos-columnas">
         <!-- Sección de información del usuario -->
+        <h2>Datos Personales</h2>
         <section class="seccion-usuario">
             <form action="../controlador/register.php" method="POST">
                 <div class="profile-info">
-                    <h2>Datos Personales</h2>
-                    <ul>
-                        <li>
-                            <span class="label">Nombre:</span>
-                            <input type="text" name="nombre" value="<?php echo $_SESSION['nombre']; ?>" placeholder="Introduce tu nombre">
-                        </li>
-                        <li>
-                            <span class="label">email:</span>
-                            <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>" placeholder="Introduce tu dirección">
-                        </li>
-                    </ul>
+                    <div>
+                        <span class="label">Nombre:</span>
+                        <input type="text" name="nombre" value="<?php echo $_SESSION['nombre']; ?>" placeholder="Introduce tu nombre">
+                    </div>
+                    <div>
+                        <span class="label">Email:</span>
+                        <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>" placeholder="Introduce tu dirección">
+                    </div>
                 </div>
-
             </form>
         </section>
         </div>
@@ -43,10 +38,10 @@ var_dump($_SESSION);
             <!-- Accesos directos a otras áreas -->
             <section class="accesos-areas">
                 <div class="area">
-                    <a href="misActividades.php">Mis actividades</a>
+                    <a href="misActividades.php" class="btn-area">Mis actividades</a>
                 </div>
                 <div class="area">
-                    <a href="miSuscripcion.html">Mi suscripción</a>
+                    <a href="miSuscripcion.html" class="btn-area">Mi suscripción</a>
                 </div>
             </section>
         </div>
