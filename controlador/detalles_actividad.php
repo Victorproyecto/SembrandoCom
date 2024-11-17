@@ -20,13 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             http_response_code(404);
             return;
         }
-
         $cooperativa = obtenerCooperativa($actividad["id_cooperativa"]);
         if(!$cooperativa) {
             http_response_code(404);
             return;
         }
-
         include '../vista/detallesActividad.php';
     }catch(PDOException $e) {
         http_response_code(500);
