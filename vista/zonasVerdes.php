@@ -29,8 +29,7 @@ session_start();
             </div>-->
 
             <!-- Lista de Eventos -->
-            <div class="lista-eventos">
-                
+            <div id="lista-eventos">
             </div>
             <!-- Botón para cargar más eventos -->
             <button class="btn-mostrar-mas">Mostrar más</button>
