@@ -838,7 +838,128 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 
 /* PAGINA PRINCIPAL DE COOPERATIVAS */
-/* Mis Tareas */
+/*Contenedor principal*/
+.main-perfil-cooperativa{
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9fbe7;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*Información del perfil*/
+
+.principal-cooperativa {
+    background-color: #A9401D;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    width: 500px;
+}
+
+.profile-info h3 {
+    margin: auto;
+}
+
+.profile-info div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-info label {
+    font-weight: bold;
+    text-align: left;
+    width: 100px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+}
+
+.profile-info input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 5px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.profile-info textarea {
+    width: 100%; 
+    height: 200px; 
+    border-radius: 5px;
+}
+
+.profile-footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+}
+
+.profile-footer button{
+    background-color: #8bc34a;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #212121;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.profile-footer button:hover{
+    background-color: #ff5722;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+}
+
+
+/* Accesos a Otras Áreas cooperativa */
+.accesos-areas-coop {
+    display: flex;
+    fle
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.btn-area-coop {
+    background-color: #8bc34a;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #212121;
+    font-size: 20px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-area-coop:hover {
+    background-color: #ff5722;
+    color: white;
+
+}
+
+
+/* Mis Tareas 
 .mis-tareas, .nueva-tarea, .mi-calendario, .solicitudes, .nuevo-mensaje, .gestion-voluntarios {
     background-color: #fff;
     padding: 20px;
@@ -872,7 +993,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     cursor: pointer;
 }
 
-/* Nueva Tarea */
+ Nueva Tarea 
 .nueva-tarea form input, .nueva-tarea form textarea {
     width: 100%;
     padding: 8px;
@@ -890,7 +1011,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     cursor: pointer;
 }
 
-/* Solicitudes */
+ Solicitudes 
 .solicitudes ul {
     list-style: none;
     padding: 0;
@@ -913,7 +1034,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     color: white;
 }
 
-/* Nuevo mensaje */
+Nuevo mensaje 
 .nuevo-mensaje form input, .nuevo-mensaje form textarea {
     width: 100%;
     padding: 8px;
@@ -931,7 +1052,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     cursor: pointer;
 }
 
-/* Gestión Voluntarios */
+Gestión Voluntarios
 .gestion-voluntarios .filtro, .gestion-voluntarios input {
     margin-bottom: 10px;
 }
@@ -952,122 +1073,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     cursor: pointer;
 }
 
-/*Información del perfil*/
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-
-}
-.profile-info h2 {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #A9401D;
-    margin-bottom: 15px;
-}
-
-
-.container {
-    width: 700px;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.profile-header img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-.profile-header p {
-    margin: 5px 0;
-    font-size: 1.1em;
-    color: #666;
-}
-.profile-info {
-    margin-top: 20px;
-}
-
-.profile-info p {
-    font-size: 1.1em;
-    color: #444;
-}
-.profile-info .label {
-    font-weight: bold;
-    color: #333;
-    width: 500px;
-    text-align: left;
-}
-
-.profile-info input{
-    width: 500px;
-}
-
-
-.profile-footer {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #888;
-}
-
-.profile-info textarea {
-    width: 70%; 
-    height: 200px; 
-}
-
-/*Botones enlaces páginas actividades y huertos*/
-.contenedor-btns {
-    display: flex; /* Activa Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    gap: 20px;
-}
-
-.boton-actividades {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #A9401D;
-    color: #212121; 
-    text-decoration: none;
-    border-radius: 5px; 
-    font-size: 1rem; 
-    text-align: center; 
-    transition: background-color 0.3s; 
-}
-
-.boton-actividades:hover {
-    background-color: #ff5722; 
-}
-
-.boton-huertos {
-    display: inline-block; 
-    padding: 10px 20px;
-    background-color: #8bc34a; 
-    color: #212121; 
-    text-decoration: none; 
-    border-radius: 5px; 
-    font-size: 1rem;
-    text-align: center; 
-    transition: background-color 0.3s; 
-}
-
-.boton-huertos:hover {
-    background-color: #ff5722; 
-}
-
-
-
-
-/* Sección Mi Calendario */
+Sección Mi Calendario
 .seccion-calendario {
     padding: 20px;
     background-color: #F9FBE7;
@@ -1081,7 +1087,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     margin-bottom: 20px;
 }
 
-/* Controles de Mes */
+Controles de Mes
 .control-mes {
     display: flex;
     align-items: center;
@@ -1111,7 +1117,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     border-radius: 8px;
 }
 
-/* Próximas Tareas */
+Próximas Tareas
 .proximas-tareas {
     background-color: #8bc34a;
     padding: 20px;
@@ -1148,6 +1154,9 @@ input[type="text"], input[type="file"], input[type="url"] {
     cursor: pointer;
     margin-top: 10px;
 }
+
+
+
 /*ACTIVIDADES COOPERATIVAS*/
 /* Estilo general del contenedor principal */
 .contenedor-principal {
