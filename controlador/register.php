@@ -75,7 +75,7 @@ try {
 }
  // Redirigir según el tipo de usuario
  if ($cooperativa == "cooperativa") {
-    header("Location: ../vista/principalcooperativas.php");
+    header("Location: ../controlador/principalcooperativa.php");
     exit();
 } else {
     header("Location: ../vista/principalusuario.php");
