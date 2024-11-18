@@ -7,7 +7,9 @@ function parametroPost($parametro) {
 }
 
 function validarSesionIniciada() {
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['id_usuario'])) {
         http_response_code(401);
         echo json_encode(['error' => 'Sesion no iniciada']);

@@ -62,7 +62,7 @@ session_start();
     <div id="footer-placeholder"></div>
 
     <!-- Script para cargar el header y footer -->
-    <script src="../vista/js/header_footer.js"></script>
+    <script src="../vista/js/header_footer_coop.js"></script>
 
     <!-- Script para cargar los huertos relacionados a la cooperativa y actualizar el campo idHuerto -->
     <script>

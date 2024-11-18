@@ -37,7 +37,7 @@ try {
 if($cooperativa)
     try {
             // Preparar la consulta para insertar el id_usuario
-            $query = $conexion->prepare("INSERT INTO cooperativas (id_usuario) VALUES (?)");
+            $query = $conexion->prepare("INSERT INTO cooperativas (id_usuariom nombre) VALUES (?,?)");
 
             // Verificar que la preparación de la consulta fue exitosa
             if ($query === false) {
@@ -75,7 +75,7 @@ try {
 }
  // Redirigir según el tipo de usuario
  if ($cooperativa == "cooperativa") {
-    header("Location: ../controlador/principalcooperativa.php");
+    header("Location: ../controlador/get_cooperativa.php");
     exit();
 } else {
     header("Location: ../vista/principalusuario.php");

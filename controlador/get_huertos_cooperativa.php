@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $idCooperativa = 1;
     try {
         $huertos = obtenerHuertosPorCooperativa($idCooperativa);
-        include '../vista/actividades_cooperativas.php';
+        include '../vista/huertos_cooperativas.php';
     }catch(PDOException $e) {
         http_response_code(500);
         echo json_encode(['error' => $e->getMessage()]);

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -45,7 +47,7 @@ session_start();
     <div id="footer-placeholder"></div>
 
     <!-- Script para cargar el header y footer -->
-    <script src="../vista/js/header_footer.js"></script>
+    <script src="../vista/js/header_footer_coop.js"></script>
 
     <!-- Script para manejar los huertos relacionados a la cooperativa -->
     <script>
@@ -79,7 +81,6 @@ session_start();
                 huertoDiv.innerHTML = `
                     <h3>${huerto.nombre}</h3>
                     <p><strong>Dirección:</strong> ${huerto.direccion}</p>
-                    <p><strong>Municipio ID:</strong> ${huerto.idMunicipio}</p>
                     <p><strong>Aforo:</strong> ${huerto.aforo}</p>
                     <button class="btn-eliminar" data-id="${huerto.id}">Eliminar</button>
                 `;

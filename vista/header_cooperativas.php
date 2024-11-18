@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="logo">
-        <a href="principalusuario.php">
+        <a href="../controlador/get_cooperativa.php">
             <img src="../vista/img/imagenes/logo.png" alt="Logo Sembrando Comunidad">
         </a>
         <div class="logo-text">
@@ -9,9 +9,9 @@
         </div>
     </div>
     <ul class="menu">
-        <li><a href="principalcooperativas.html">Perfil Cooperativa</a></li>
-        <li><a href="actividades_cooperativas.php">Mis actividades</a></li>
-        <li><a href="huertos_cooperativas.html">Mis Huertos</a></li>
-        <li><a href="ayuda.html">Ayuda</a></li>
+        <li><a href="/SembrandoCom/controlador/get_cooperativa.php">Perfil Cooperativa</a></li>
+        <li><a href="/SembrandoCom/vista/actividades_cooperativas.php">Mis actividades</a></li>
+        <li><a href="/SembrandoCom/controlador/get_huertos_cooperativa.php">Mis Huertos</a></li>
+        <li><a href="/SembrandoCom/vista/ayuda_cooperativa.html">Ayuda</a></li>
     </ul>
 </nav>
