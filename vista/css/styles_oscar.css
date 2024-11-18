@@ -116,8 +116,6 @@ h4 {
 /* General Styles */
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
     height: 100vh; /* Todo el viewport para el body */
     display: flex;
     flex-direction: column;
@@ -150,7 +148,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
     position: relative;
     z-index: 2;  /* Asegura que el formulario esté sobre el fondo */
 }
@@ -162,21 +159,18 @@ body {
     width: 100%;
     max-width: 500px;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .register-container {
     background-color: #ff5722;  /* Fondo naranja */
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;  /* Bordes redondeados */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Sombra para el contenedor */
-    width: 100%;
-    box-sizing: border-box;  /* Asegura que el padding no expanda el ancho del contenedor */
+    width: 100%;  
 }
 
 .logo-container-central {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 #logoCentral {
@@ -186,7 +180,6 @@ body {
 
 .message-container {
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .message {
@@ -200,10 +193,15 @@ body {
 .register-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 5px;
 }
 
+.register-form .input {
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    border: 1px solid #ddd; /* Borde sencillo */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Texto consistente */
+}
 .label {
     color: #212121;
     font-weight: bold;
@@ -216,13 +214,18 @@ body {
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s;
-    width: calc(100% - 20px);  /* Asegura que los campos tengan el mismo ancho */
-    box-sizing: border-box;
-    margin-bottom: 10px; /* Espaciado adicional entre campos */
+    width: calc(100% - 20px);
+}
+.admin-label {
+    color: #212121;
+    font-weight: bold;
+    width: 100%;
 }
 
 .checkbox {
     margin-left: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 .input:focus {
@@ -250,7 +253,6 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    margin: 20px 0;
 }
 
 .hr-register {
@@ -261,7 +263,6 @@ body {
 }
 
 .separator span {
-    margin: 0 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: #212121;
@@ -276,7 +277,6 @@ body {
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
-    margin-bottom: 20px;
 }
 
 #btn-google:hover {
@@ -297,7 +297,6 @@ footer {
 /* Footer and Register Footer */
 .register-footer {
     text-align: center;
-    margin-top: 20px;
 }
 
 .login-link {
@@ -305,6 +304,12 @@ footer {
     font-weight: bold;
     text-decoration: none;
 }
+
+.login-link:hover {
+    color: black;
+    text-decoration: underline;
+}
+
 
 .link-sub:hover {
     text-decoration: underline;
@@ -390,6 +395,16 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.login-form .input {
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    padding: 12px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio entre los inputs */
+    border: 1px solid #ddd; /* Borde sencillo */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    font-size: 16px; /* Texto consistente */
 }
 
 .label {
@@ -496,8 +511,6 @@ footer {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    width: 50%;
-    margin: 0 auto;
     margin-bottom: 20px;
 }
 
