@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         //Redirige a la pagina de perfil de usuario.
  // Redirigir según el tipo de usuario
- if ($_SESSION['cooperativa'] === true || $_SESSION['cooperativa'] === 1) {
+ if ($_SESSION['cooperativa'] === true) {
     header("Location: ../vista/principalcooperativas.php");
     exit();
 } else {
