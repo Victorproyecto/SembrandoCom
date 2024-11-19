@@ -63,7 +63,7 @@ function obtenerIdByEmail($email) {
 
     $usuario = null;
     if ($result->num_rows > 0) {
-        $usuario = $result->fetch_assoc();
+        $usuario = $result->fetch_assoc()['id'];
     }
     return $usuario;
 }
