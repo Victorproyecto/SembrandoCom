@@ -7,6 +7,6 @@ session_unset();  // Elimina las variables de sesión
 session_destroy();  // Destruye la sesión
 
 // Redirige a la página de inicio
-header("Location: ../vista/index.php");
+header("Location: /index.php");
 exit();
 ?>
