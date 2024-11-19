@@ -47,7 +47,7 @@ session_start();
 // Función para obtener huertos desde el controlador
 async function fetchHuertosPublicados() {
     try {
-        const response = await fetch('../controlador/get_huertos.php');
+        const response = await fetch('../controlador/get_zonas_verdes.php');
         if (!response.ok) {
             throw new Error('Error en la respuesta de la red');
         }

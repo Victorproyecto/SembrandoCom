@@ -17,6 +17,21 @@ function obtenerHuertos(){
     return $data;
 }
 
+function obtenerHuertosConCooperativa(){
+    $conexion = crearConexion();
+    $query = "SELECT h.nombre as nombre, h.direccion as direccion , c.nombre as nombreCooperativa FROM huertos h INNER JOIN cooperativas c ON h.id_cooperativa = c.id";
+    $state = $conexion->prepare($query);
+    $state->execute();
+    $result = $state->get_result();
+    $data = array();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            array_push($data, $row);
+        }
+    }
+    return $data;
+}
+
 function obtenerHuerto($id){
     $conexion = crearConexion();
     $query = "SELECT * FROM huertos WHERE id = ?";
