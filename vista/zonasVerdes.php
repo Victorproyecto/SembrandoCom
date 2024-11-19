@@ -73,7 +73,7 @@ function displayHuertosPublicados(huertos) {
             <h3>${huerto.nombre}</h3>
             <p><strong>Dirección:</strong> ${huerto.direccion}</p>
             <p><strong>Cooperativa:</strong> ${huerto.nombreCooperativa}</p>
-            <p>${huerto.descripcion}</p>
+            <p>${huerto.descripcion != null ? huerto.descripcion : 'Sin descripción'}</p>
         `;
 
         // Añadir el div del huerto al contenedor principal
