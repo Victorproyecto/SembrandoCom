@@ -45,7 +45,7 @@ if($cooperativa)
             }
 
             // Enlazar el parámetro (usamos "i" para entero)
-            $query->bind_param("i", $lastUserId);
+            $query->bind_param("is", $lastUserId, $nombre);
 
             // Ejecutar la consulta
        $query->execute();
