@@ -17,7 +17,7 @@ session_start();
 <main>
     <!-- Lista de Actividades -->
     <section class="lista-actividades">
-        <h2>Mis Actividades</h2>
+        <h2>Actividades</h2>
         <div id="actividades-container">
 
         </div>

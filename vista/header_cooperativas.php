@@ -9,7 +9,9 @@
         </div>
     </div>
     <ul class="menu">
-        <li><a href="/controlador/get_cooperativa.php">Perfil Cooperativa</a></li>
+        <li><a href="/controlador/get_cooperativa.php">Perfil Cooperativa</a>
+         <ul><li><a href="/controlador/logout.php">Logout</a></li></ul>
+        </li>
         <li><a href="/vista/actividades_cooperativas.php">Mis actividades</a></li>
         <li><a href="/controlador/get_huertos_cooperativa.php">Mis Huertos</a></li>
         <li><a href="/vista/ayuda_cooperativa.html">Ayuda</a></li>

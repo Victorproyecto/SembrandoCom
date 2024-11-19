@@ -14,11 +14,11 @@ session_start();
     <ul class="menu">
     <li><a href="../vista/principalusuario.php">Mi perfil</a>
             <ul>
-                <li><a href="../vista/miSuscripcion.html">Mi suscripción</a></li>
+                <li><a href="/vista/miSuscripcion.html">Mi suscripción</a></li>
                 <?php if (isset($_SESSION['cooperativa']) && $_SESSION['cooperativa'] == true): ?>
-                <li><a href="../controlador/get_cooperativa.php">Mi cooperativa</a></li>
+                <li><a href="/controlador/get_cooperativa.php">Mi cooperativa</a></li>
                 <?php endif; ?>
-                <li><a href="../controlador/logout.php">Logout</a></li>
+                <li><a href="/controlador/logout.php">Logout</a></li>
             </ul>
         </li>
         <li><a href="../vista/actividades.php">Actividades</a></li>
