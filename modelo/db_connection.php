@@ -1,12 +1,17 @@
 <?php
 
 	function crearConexion() {
-		$host = "localhost";
-		$user = "root";
-		$pass = "";
-		$baseDatos = "SembrandoCom";
+		$url = getenv('JAWSDB_URL') ?: 'mysql://root:root@localhost/test';
 
-		$conexion = mysqli_connect($host, $user, $pass, $baseDatos);
+		// Parsear la URL
+		$dbparts = parse_url($url);
+		
+		$host = $dbparts['host'];
+		$username = $dbparts['user'];
+		$password = $dbparts['pass'];
+		$dbname = ltrim($dbparts['path'], '/');
+
+		$conexion = mysqli_connect($host, $username, $password, $dbname);
 
         if(mysqli_connect_errno()){
             die("Error de conexión a la base de datos: " . mysqli_connect_error());
