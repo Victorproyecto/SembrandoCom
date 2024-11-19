@@ -8,12 +8,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-validarSesionIniciada();
+//validarSesionIniciada();
 
 $conexion = crearConexion();
 
 header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    session_start();
     try {
         $id_usuario = $_SESSION['id_usuario'];
         $query = "
