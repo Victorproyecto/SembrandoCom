@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         if ($stmt === false) {
             die('Error en la preparación de la consulta: ' . $conexion->error);
         }
-        $stmt->bind_param('i', $id_usuario['id']);
+        $stmt->bind_param('i', $id_usuario);
         $stmt->execute();
         $result = $stmt->get_result();
         $actividades = [];
