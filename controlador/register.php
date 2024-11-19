@@ -37,7 +37,7 @@ try {
 if($cooperativa)
     try {
             // Preparar la consulta para insertar el id_usuario
-            $query = $conexion->prepare("INSERT INTO cooperativas (id_usuariom nombre) VALUES (?,?)");
+            $query = $conexion->prepare("INSERT INTO cooperativas (id_usuario, nombre) VALUES (?,?)");
 
             // Verificar que la preparación de la consulta fue exitosa
             if ($query === false) {
