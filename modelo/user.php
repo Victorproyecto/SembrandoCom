@@ -61,7 +61,11 @@ function obtenerIdByEmail($email) {
     $state->execute();
     $result = $state->get_result();
 
-    return $result->fetch_assoc()['id'];
+    $usuario = null;
+    if ($result->num_rows > 0) {
+        $usuario = $result->fetch_assoc();
+    }
+    return $usuario;
 }
 
 function obtenerNombreById($id) {

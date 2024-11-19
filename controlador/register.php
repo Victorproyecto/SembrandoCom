@@ -23,6 +23,10 @@ include_once "../modelo/db_connection.php";
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     //Insertar los datos en la bbdd
 try {
+    $usuarioExistente = obtenerIdByEmail($email);
+    if($usuarioExistente) {
+        header("Location: ../vista/register.html");
+    }
     //Insertar los datos en la bbdd
     $conexion = crearConexion();
     $query = $conexion->prepare("INSERT INTO usuarios (nombre, correo_electronico, password, fecha_nacimiento, es_premium) VALUES (?, ?, ?, ?, ?)");
