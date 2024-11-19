@@ -159,10 +159,3 @@ ALTER TABLE `actividades`
 --
 ALTER TABLE `huertos`
     ADD CONSTRAINT `huertos_ibfk_1` FOREIGN KEY (`id_cooperativa`) REFERENCES `cooperativas` (`id`);
-
---
--- Filtros para la tabla `usuarios_actividad`
---
-ALTER TABLE `usuarios_actividad`
-    ADD CONSTRAINT `usuarios_actividad_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `usuarios_actividad_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES `actividades` (`id`) ON DELETE CASCADE;
