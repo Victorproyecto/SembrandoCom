@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     try {
 
-        $idUsuario = $_SESSION['id_usuario'];
+        $idUsuario =$_POST['id_usuario'];
         $idActividad = $_POST['id_actividad'];
 
         //SI no me viene un parametro declarado como NOT NULL en la BBDD, devuelvo un error
