@@ -9,9 +9,9 @@
         </div>
     </div>
     <ul class="menu">
-        <li><a href="/SembrandoCom/controlador/get_cooperativa.php">Perfil Cooperativa</a></li>
-        <li><a href="/SembrandoCom/vista/actividades_cooperativas.php">Mis actividades</a></li>
-        <li><a href="/SembrandoCom/controlador/get_huertos_cooperativa.php">Mis Huertos</a></li>
-        <li><a href="/SembrandoCom/vista/ayuda_cooperativa.html">Ayuda</a></li>
+        <li><a href="/controlador/get_cooperativa.php">Perfil Cooperativa</a></li>
+        <li><a href="/vista/actividades_cooperativas.php">Mis actividades</a></li>
+        <li><a href="/controlador/get_huertos_cooperativa.php">Mis Huertos</a></li>
+        <li><a href="/vista/ayuda_cooperativa.html">Ayuda</a></li>
     </ul>
 </nav>
