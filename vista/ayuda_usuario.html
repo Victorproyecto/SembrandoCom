@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda - Sembrando Comunidad</title>
+    <link rel="stylesheet" href="../vista/css/styles_oscar.css">
+    <link rel="stylesheet" href="../vista/css/styles header-footer.css">
+
+</head>
+
+
+<body> 
+    <main>
+         <!--Colocación del header-->
+        <div id="header-placeholder"></div>
+
+        <!--Sección ayuda-->
+        <section class="ayuda">
+            <h2>AYUDA</h2>
+
+            <div id="ayuda-container">
+                <div class="faq-container">
+                    <div class="preguntas-frecuentes">
+                        <h3>Preguntas Frecuentes</h3>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">¿Cómo puedo suscribirme a una actividad?</button>
+                        <div class="faq-answer">
+                            <p>En la sección Conecta, puedes encontrar próximos eventos cerca de ti, sobre los que puedes conocer más información, y apuntarte en el botón que encontrarás en cada una de ellas</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">¿Qué pasa si no puedo asistir a una actividad finalmente?</button>
+                        <div class="faq-answer">
+                            <p>Deberás avisar con la mayor antelación posible a la cooperativa que organice la actividad, mediante los datos de contacto que aparecen indicados en la misma.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">¿Puedo cancelar mi suscripción premium cuando quiera?</button>
+                        <div class="faq-answer">
+                            <p>¡Claro! Puedes cancelar tu suscripción en cualquier momento. Puedes cancelar hasta un día antes de la fecha de renovación para evitar que se cargue un nuevo mes a tu factura.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Si soy una cooperativa, ¿con cuánto tiempo de antelación puedo organizar un evento?</button>
+                        <div class="faq-answer">
+                            <p>Para organizar un evento, debes hacerlo con al menos una semana de antelación desde su publicación.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">¿Cómo puedo contactar con soporte?</button>
+                        <div class="faq-answer">
+                            <p>Puedes contactar con soporte enviando un correo a soporte@ejemplo.com o llamando al 666-222-444, o rellenar el formulario de incidencias, trataremos de responderte lo antes posible.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="incidencias-container">
+                    <h3>Incidencias</h3>
+
+                    <div class="form-container">
+                        <p>Si tienes algún otro problema o consulta que no puedas resolver, rellena este formulario y trataremos de ayudarte lo antes posible.</p><br>
+                        <form id="incidence-form">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="tipo">Tipo de Incidencia</label>
+                                <select id="tipo" name="tipo" required>
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="general">Consulta General</option>
+                                    <option value="suscripcion">Suscripción</option>
+                                    <option value="gestion actividades">Gestión de actividades</option>
+                                    <option value="campanias publicitarias">Campañas publicitarias</option>
+                                    <option value="blog">Blog</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="descripcion">Descripción del Problema</label>
+                                <textarea id="descripcion" name="descripcion" rows="5" required></textarea>
+                            </div>
+                
+                            <button type="submit" class="submit-btn">Enviar Incidencia</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-buttons">
+                <a href="mailto:soporte@ejemplo.com" class="contact-btn">
+                    📧 Contactar por Correo
+                </a>
+                <a href="tel:+34666222444" class="contact-btn">
+                    📞 Llamar por Teléfono
+                </a>
+            </div>
+        </section>
+    
+
+        <!--Colocación del footer-->
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <!--Incluimos los archivos JavaScript-->
+    <script src="../vista/js/script_ayuda.js"></script>
+    <script src="../vista/js/header_footer.js"></script>
+
+
+</body>
+</html>

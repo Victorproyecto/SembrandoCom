@@ -24,7 +24,7 @@ session_start();
         <li><a href="/vista/actividades.php">Actividades</a></li>
         <li><a href="/vista/zonasVerdes.php">Zonas verdes</a></li>
         <!--<li><a href="blog.html">Blog</a></li>-->
-        <li><a href="/vista/ayuda_cooperativa.html">Ayuda</a></li>
+        <li><a href="/vista/ayuda_usuario.html">Ayuda</a></li>
     </ul>
 </nav>
 </nav>
