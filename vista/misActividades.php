@@ -7,8 +7,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis actividades - Sembrando Comunidad</title>
-    <link rel="stylesheet" href="../vista/css/styles header-footer.css">
     <link rel="stylesheet" href="../vista/css/styles lucia.css">
+    <link rel="stylesheet" href="../vista/css/styles header-footer.css">
 
 </head>
 <body>
