@@ -130,6 +130,25 @@ h3 {
     background-color: #e64a19;
 }
 /* Footer */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la ventana */
+    margin: 0; /* Remueve márgenes predeterminados */
+}
+
+main {
+    flex: 1; /* El contenido principal toma todo el espacio disponible */
+}
+
+footer {
+    background-color: #8bc34a;
+    padding: 20px;
+    text-align: center;
+}
+
+
 footer {
     background-color: #8bc34a;
     color: white;

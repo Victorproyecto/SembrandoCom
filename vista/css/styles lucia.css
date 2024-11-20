@@ -21,7 +21,7 @@
     max-width: 70px;  /* Tamaño más pequeño del logo en la cabecera */
     height: auto;
 }
-/* Footer */
+/* Footer 
 footer {
     text-align: center;
     padding: 10px;
@@ -32,6 +32,7 @@ footer {
     position: relative;
     margin-top: 20px;
 }
+*/
 
 /* Footer and Register Footer */
 .register-footer {
@@ -445,6 +446,7 @@ input[type="text"], input[type="file"], input[type="url"] {
     align-items: center;
     gap: 15px;
     margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .btn-area {
@@ -654,20 +656,22 @@ input[type="text"], input[type="file"], input[type="url"] {
     text-align: center;
 }
 
-.filtro-categorias h3 {
+/*.filtro-categorias h3 {
     font-family: 'Poppins', sans-serif;
     color: #212121;
     margin-bottom: 10px;
     
-}
+}*/
 
 /* Lista de Actividades */
 .lista-actividades {
-    width: 75%;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px;
     padding: 20px;
-    background-color: #F9FBE7;
-    overflow: hidden; /* Para prevenir que el contenedor colapse con el float del filtro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de profundidad */
 }
 
 .lista-actividades h2 {
@@ -679,12 +683,22 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 .actividad {
     display: flex;
-    color: #8bc34a;
-    border-radius: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #8bc34a; /* Borde verde */
+    border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
-    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #f9fbe7; /* Fondo suave */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación al pasar el cursor */
 }
+
+.actividad:hover {
+    transform: scale(1.02); /* Zoom suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 
 .actividad-thumbnail {
     width: 25%;
