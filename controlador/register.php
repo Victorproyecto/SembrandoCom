@@ -26,6 +26,7 @@ try {
     $usuarioExistente = obtenerIdByEmail($email);
     if($usuarioExistente) {
         header("Location: ../vista/register.html");
+        exit();
     }
     //Insertar los datos en la bbdd
     $conexion = crearConexion();
