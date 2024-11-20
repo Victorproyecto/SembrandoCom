@@ -501,7 +501,6 @@ input[type="text"], input[type="file"], input[type="url"] {
 /*ZONAS VERDES*/
 .seccion-huertos {
     padding: 20px;
-
 }
 
 .seccion-huertos h2 {
@@ -513,21 +512,17 @@ input[type="text"], input[type="file"], input[type="url"] {
 }
 
 #lista-huertos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    background-color: #A9401D;
+    width: 600px;
+    margin: auto;
+    background-color: #8bc34a;
     border-radius: 10px;
-    max-width: 800px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de profundidad */
 }
 
 
 .huerto {
-    width: 500px;
-    background-color: #8bc34a;
+    width: 550px;
     padding: 15px;
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
@@ -540,6 +535,7 @@ input[type="text"], input[type="file"], input[type="url"] {
 .huerto:hover {
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #ff5722; /* Borde verde */
 }
 
 .huerto h3 {
@@ -561,20 +557,9 @@ input[type="text"], input[type="file"], input[type="url"] {
     margin: 10px 0;
 }
 
-.btn-detalles, .btn-inscripcion {
-    background-color: #A9401D;
-    color: white;
-    padding: 8px 10px;
-    margin-top: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
 
-.btn-inscripcion {
-    background-color: #ff5722;
-}
+
+
 
 .buscador-filtro {
     display: flex;
@@ -665,10 +650,9 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 /* Lista de Actividades */
 .lista-actividades {
-    width: 90%;
-    max-width: 1200px;
+    width: 40%;
     margin: 40px auto;
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #a9401d;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de profundidad */
@@ -676,26 +660,25 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 .lista-actividades h2 {
     font-family: 'Poppins', sans-serif;
-    color: #212121;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .actividad {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid #8bc34a; /* Borde verde */
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     padding: 20px;
-    margin-bottom: 15px;
     background-color: #f9fbe7; /* Fondo suave */
     transition: transform 0.2s, box-shadow 0.2s; /* Animación al pasar el cursor */
 }
 
 .actividad:hover {
     transform: scale(1.02); /* Zoom suave */
+    border: 2px solid #8bc34a; /* Borde verde */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -720,7 +703,7 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 .actividad p {
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: #F9FBE7;
 }
 
@@ -750,19 +733,37 @@ input[type="text"], input[type="file"], input[type="url"] {
     font-size: 14px;
 }
 
+/*.btn-inscripcion {
+    background-color: #ff5722;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+}*/
+
+
 /* Estilo del botón Inscribirme en la página de actividades */
 .btn-inscribirme {
-    background-color: #ff5722; /* Fondo naranja */
-    color: white; /* Texto blanco */
-    padding: 10px 20px; /* Espaciado interior */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor tipo mano */
-    margin-top: 10px; /* Espacio superior */
-    display: block; /* Asegura que el botón esté en su propia línea */
-    text-align: center; /* Centrar texto */
-    font-family: 'Poppins', sans-serif; /* Fuente acorde a la guía de estilo */
-    font-size: 16px; /* Tamaño de fuente */
+    background-color: #ff5722; 
+    margin-left: 165px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: white; 
+    width: 200px;
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
 }
 
 .btn-inscribirme:hover {
@@ -780,12 +781,13 @@ input[type="text"], input[type="file"], input[type="url"] {
 /*PAGINA DE DETALLES DE LA ACTIVIDAD E INSCRIPCION*/
 /* Detalles de la Actividad */
 .detalles-actividad {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #8bc34a;
+    border-radius: 10px;
     padding: 20px;
-    background-color: #F9FBE7;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -799,10 +801,13 @@ input[type="text"], input[type="file"], input[type="url"] {
 
 .info-actividad {
     font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    border-radius: 5px;
     color: #212121;
     font-size: 18px;
     margin-bottom: 20px;
     line-height: 1.6em;
+    padding: 10px;
 }
 
 .info-actividad p {
@@ -820,6 +825,9 @@ input[type="text"], input[type="file"], input[type="url"] {
     font-size: 16px;
     line-height: 1.8em;
     margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .tipo-actividad {
@@ -841,22 +849,25 @@ input[type="text"], input[type="file"], input[type="url"] {
     color: #FFFFFF;
 }
 
-.btn-inscripcion {
+.btn-inscripcion-act {
     display: block;
     width: 200px;
-    background-color: #ff5722;
+    background-color: #A9401D;
     color: white;
     text-align: center;
     padding: 15px;
-    border: none;
     border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     cursor: pointer;
-    margin: 20px auto;
+    margin: auto;
     transition: background-color 0.3s;
 }
 
+.btn-inscripcion-act:hover {
+    transform: scale(1.02); /* Zoom suave */
+    border: 2px solid #8bc34a; /* Borde verde */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 
 
 
@@ -1342,6 +1353,7 @@ Próximas Tareas
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .huerto h3 {

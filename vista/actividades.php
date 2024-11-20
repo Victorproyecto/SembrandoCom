@@ -17,7 +17,7 @@ session_start();
 <main>
     <!-- Lista de Actividades -->
     <section class="lista-actividades">
-        <h2>Mis Actividades</h2>
+        <h2>Actividades</h2>
         <div id="actividades-container">
 
         </div>
@@ -63,7 +63,7 @@ session_start();
                         <p>Organizado por: Cooperativa Verde</p>
                         <p><span>Fecha: 12/12/2023</span> | <span>Ubicación: ${actividad.direccion}</span></p>
                         <div class="tipo-actividad gratuita">Gratuita</div>
-                        <button class="btn-inscripcion" onclick="window.location.href='../controlador/detalles_actividad.php?id=${actividad.id}'">Inscribirme</button>
+                        <button class="btn-inscribirme" onclick="window.location.href='../controlador/detalles_actividad.php?id=${actividad.id}'">Inscribirme</button>
                     </div>
                 `;
 

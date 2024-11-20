@@ -43,7 +43,7 @@
                 <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario']['id']; ?>"> <!-- ID del usuario -->
 
                 <!-- Botón de inscripción -->
-                <button class="btn-inscripcion" type="submit">Inscribirse</button>
+                <button class="btn-inscripcion-act" type="submit">Inscribirme</button>
             </form>
         </section>
     </main>
